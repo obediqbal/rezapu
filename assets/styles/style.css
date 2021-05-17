@@ -4,14 +4,19 @@ body{
     font-family: 'Quicksand', sans-serif;
     margin:0px;
 }
+nav a{
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+nav a:hover{
+    font-weight: bold;
+}
 h2,h3{
     color: #00a2c6;
 }
 body>main, body>header{
     margin: 10px;
-}
-a{
-    text-decoration:none;
 }
 footer{
     background-color: #00a2c6;
