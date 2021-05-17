@@ -12,6 +12,9 @@ nav a{
 nav a:hover{
     font-weight: bold;
 }
+.profile header{
+    text-align:center;
+}
 h2,h3{
     color: #00a2c6;
 }
@@ -22,4 +25,6 @@ footer{
     background-color: #00a2c6;
     color: white;
     padding: 20px;
+    text-align: center;
+    font-weight: bold;
 }
