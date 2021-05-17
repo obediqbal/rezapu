@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
 body{
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    margin:0px;
 }
-h2{
+h2,h3{
     color: #00a2c6;
 }
-h3{
-    color: #00a2c6;
+body>main, body>header{
+    margin: 10px;
+}
+a{
+    text-decoration:none;
 }
 footer{
     background-color: #00a2c6;
