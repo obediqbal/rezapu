@@ -4,19 +4,22 @@ body{
     background-color:rgb(13, 0, 14);
     background-size: contain;
     margin:0px;
+    text-align:center;
 
 }
 main{
     width:50%;
     height:80vh;
     margin:auto;
-    text-align:center;
     display:block;
     padding-top:10vh;
 }
 main *{
     margin-top:1vh;
     margin-bottom:1vh;
+}
+code{
+    color:white;
 }
 main h1{
     font-size:3em;
