@@ -8,9 +8,8 @@ body{
 }
 main{
     width:50%;
-    margin:50px auto;
+    margin:20vh auto 50px auto;
     display:block;
-    padding-top:10vh;
 }
 figure{
     text-align:center;
