@@ -1,62 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
-body{
+
+body {
     font-family: 'Kanit', sans-serif;
-    background-color:rgb(13, 0, 14);
+    background-color: rgb(13, 0, 14);
     background-size: contain;
-    margin:0px;
+    margin: 0px;
 
 }
-main{
-    width:50%;
-    margin:20vh auto 50px auto;
-    display:block;
+
+main {
+    width: 50%;
+    margin: 20vh auto 50px auto;
+    display: block;
 }
-figure{
-    text-align:center;
+
+figure {
+    text-align: center;
 }
-main *{
-    margin-top:1vh;
-    margin-bottom:1vh;
+
+main * {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
-main h1{
-    font-size:4em;
+
+main h1 {
+    font-size: 4em;
     color: white;
-    text-align:left;
+    text-align: left;
 }
-main h1::after{
+
+main h1::after {
     content: "!";
     color: white;
     font-size: 1.2em;
 }
-main h2{
-    font-size:1.5em;
-    text-align:right;
-    color:white;
-    line-height:0.7em;
+
+main h2 {
+    font-size: 1.5em;
+    text-align: right;
+    color: white;
+    line-height: 0.7em;
 }
-h2::after{
+
+h2::after {
     content: ".";
     color: red;
     font-size: 40px;
 }
-blockquote{
-    font-family:monospace;
-    line-height:1.5em;
-    color:white;
-    font-size:18px;
-    text-align:right;
+
+blockquote {
+    font-family: monospace;
+    line-height: 1.5em;
+    color: white;
+    font-size: 18px;
+    text-align: right;
 }
-blockquote::before{
+
+blockquote::before {
     content:'{';
-    color:red;
+    color: red;
     font-size: 24px;
 }
-blockquote::after{
-    content:'}';
-    color:red;
+
+blockquote::after {
+    content: '}';
+    color: red;
     font-size: 24px;
 }
-footer{
-    color:white;
-    text-align:center;
+
+footer {
+    color: white;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
 }
