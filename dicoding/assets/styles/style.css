@@ -2,24 +2,57 @@
 
 body{
     font-family: 'Quicksand', sans-serif;
-    margin:0px;
+    margin: 0;
+    padding: 0;
+}
+.jumbotron{
+    font-size: 20px;
+    padding: 60px;
+    background-color: #00c8eb;
+    text-align: center;
+    color: white;
+}
+nav{
+    background-color: #00a2c6;
+    padding: 5px;
+}
+nav li{
+    list-style-type: none;
+    display: inline;
+    margin-right: 20px;
 }
 nav a{
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
+    color: white;
 }
 nav a:hover{
     font-weight: bold;
 }
+main{
+    padding: 20px;
+}
 .profile header{
     text-align:center;
 }
+.featured-image{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.profile img{
+    width: 200px;
+}
+.card{
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
 h2,h3{
     color: #00a2c6;
-}
-body>main, body>header{
-    margin: 10px;
 }
 footer{
     background-color: #00a2c6;
