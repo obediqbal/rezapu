@@ -18,10 +18,6 @@ body {
     color: white;
 }
 
-header {
-    display: inline;
-}
-
 nav {
     background-color: #00a2c6;
     padding: 5px;
@@ -53,13 +49,18 @@ main {
 
 #content {
     float: left;
-    width: 75%;
+    width: 100%;
 }
 
 aside {
     float: right;
     width: 25%;
     padding-left: 20px;
+    position:sticky;
+    top:50px;
+}
+.sticky{
+    display: inline;
 }
 
 .profile header {
@@ -103,5 +104,6 @@ footer {
     aside {
         width: 100%;
         padding: 0;
+        position: static;
     }
 }
