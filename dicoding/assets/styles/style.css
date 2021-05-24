@@ -91,10 +91,12 @@ h3 {
 
 footer {
     background-color: #00a2c6;
+    position: relative;
     color: white;
     padding: 20px;
     text-align: center;
     font-weight: bold;
+    z-index: 1;
 }
 
 @media screen and (max-width: 1200px) {
