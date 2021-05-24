@@ -23,6 +23,7 @@ nav {
     padding: 5px;
     position: sticky;
     top: 0;
+    width:100%;
 }
 
 nav li {
@@ -43,23 +44,21 @@ nav a:hover {
 }
 
 main {
-    padding: 20px;
-    overflow: auto;
+    display: inline-block;
 }
 
 #content {
     float: left;
-    width: 100%;
+    width: 75%;
+    padding: 20px;
 }
 
 aside {
     float: right;
     width: 25%;
     position:sticky;
-    top:50px;
-}
-.sticky{
-    display: inline;
+    top:40px;
+    padding: 20px;
 }
 
 .profile header {
