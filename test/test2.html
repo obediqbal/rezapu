@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            width: 800px;
+            border: 2px solid black;
+            background-color: blueviolet;
+            margin: 0 auto;
+        }
+
+        .double {
+            flex-basis: 50% !important;
+        }
+
+        .box {
+            flex-basis: 25%;
+            padding: 40px;
+            background-color: yellowgreen;
+            border: 2px solid black;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="column">
+            <div class="row">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+
+            </div>
+            <div class="row">
+                <div class="box"></div>
+                <div class="box double"></div>
+                <div class="box double"></div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
