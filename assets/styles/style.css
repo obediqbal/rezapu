@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Kanit', sans-serif;
-    background-color: rgb(13, 0, 14);
     background-size: contain;
-    margin: 0px;
+}
 
+header {
+    margin-left: 5%;
+    padding-top: 10vh;
+    background-color: yellow;
 }
 
 main {
-    width: 50%;
-    margin: 20vh auto;
+    padding-top: 5vh;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
     display: block;
 }
 
@@ -18,53 +31,68 @@ figure {
     text-align: center;
 }
 
-main * {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+h1,
+h1::after {
+    color: white;
 }
 
-main h1 {
+h1 {
     font-size: 4em;
-    color: white;
-    text-align: left;
+    text-align: center;
 }
 
-main h1::after {
+h1::after {
     content: "!";
-    color: white;
     font-size: 1.2em;
 }
 
-main h2 {
+body, .sheet {
+    background-color: #1c1c1c;
+}
+
+.sheet { 
+    border-radius: 20px;
+    position: relative;
+    top: 35px;
+    right: 20%;
+    width: 90%;
+}
+
+h2 {
     font-size: 1.5em;
     text-align: right;
     color: white;
     line-height: 0.7em;
+    padding-bottom: 5px;
 }
 
 h2::after {
     content: ".";
-    color: red;
+    color: yellow;
     font-size: 1.8em;
 }
 
 blockquote {
     font-family: monospace;
-    color: white;
+    color: rgb(204, 204, 204);
     font-size: 1.5em;
     text-align: right;
 }
 
+blockquote::before,
+blockquote::after {
+    color: yellow;
+    font-size: 1.8em;
+}
+
 blockquote::before {
     content:'{';
-    color: red;
-    font-size: 1.8em;
+
 }
 
 blockquote::after {
     content: '}';
-    color: red;
-    font-size: 1.8em;
+
 }
 
 footer {
@@ -72,5 +100,5 @@ footer {
     bottom: 10px;
     width: 100%;
     text-align: center;
-    position: fixed;
+    position: absolute;
 }
