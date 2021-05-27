@@ -12,13 +12,13 @@ body {
 }
 
 header {
-    margin-left: 5%;
+    margin-left: 3%;
     padding-top: 10vh;
     background-color: yellow;
 }
 
 main {
-    padding-top: 5vh;
+    padding-top: 8vh;
 }
 
 .content {
