@@ -6,6 +6,16 @@
     box-sizing: border-box;
 }
 
+.base-bg {
+    background-color: yellow;
+}
+
+.base-color,
+*::before,
+*::after {
+    color: yellow;
+}
+
 body {
     font-family: 'Kanit', sans-serif;
     background-size: contain;
@@ -14,7 +24,6 @@ body {
 header {
     margin-left: 3%;
     padding-top: 10vh;
-    background-color: yellow;
 }
 
 main {
@@ -46,11 +55,12 @@ h1::after {
     font-size: 1.2em;
 }
 
-body, .sheet {
+body,
+.sheet {
     background-color: #1c1c1c;
 }
 
-.sheet { 
+.sheet {
     border-radius: 20px;
     position: relative;
     top: 35px;
@@ -68,7 +78,6 @@ h2 {
 
 h2::after {
     content: ".";
-    color: yellow;
     font-size: 1.8em;
 }
 
@@ -81,7 +90,6 @@ blockquote {
 
 blockquote::before,
 blockquote::after {
-    color: yellow;
     font-size: 1.8em;
 }
 
@@ -96,7 +104,7 @@ blockquote::after {
 }
 
 footer {
-    color: white;
+    color: rgb(204, 204, 204);
     bottom: 10px;
     width: 100%;
     text-align: center;
