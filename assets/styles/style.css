@@ -23,8 +23,8 @@ body {
 }
 
 header {
-    margin-left: 3%;
-    padding-top: 10vh;
+    margin: 0 40px;
+    padding-top: 60px;
 }
 
 figure:hover{
@@ -73,7 +73,6 @@ body,
     border-radius: 20px;
     position: relative;
     top: 35px;
-    right: 20%;
     width: 90%;
 }
 
@@ -113,9 +112,19 @@ blockquote::after {
 }
 
 footer {
-    color: rgb(204, 204, 204);
+    font-size: 0.7em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     bottom: 10px;
     width: 100%;
     text-align: center;
     position: absolute;
+    padding: 10px 0;
+}
+
+p {
+    color: #1c1c1c;
+    display: inline;
+    padding: 9px;
+    border-radius: 20px;
+    font-weight: 600;
 }
