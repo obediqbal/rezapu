@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor:default;
 }
 
 .base-bg {
@@ -24,6 +25,14 @@ body {
 header {
     margin-left: 3%;
     padding-top: 10vh;
+}
+
+figure:hover{
+    cursor:grabbing;
+}
+
+img:hover {
+    cursor:pointer;
 }
 
 main {
