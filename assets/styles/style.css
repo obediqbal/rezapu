@@ -151,3 +151,9 @@ p {
         width: 125px;
     }
 }
+
+@media screen and (max-width: 500px){
+    .content {
+        width: 90%;
+    }
+}
