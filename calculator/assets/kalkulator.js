@@ -17,16 +17,24 @@ function clearCalculator(){
 }
 
 function inputDigit(digit){
-    calculator.displayNumber += digit;
+    if(calculator.displayNumber === '0'){
+        calculator.displayNumber = digit;
+    }else{
+        calculator.displayNumber += digit;
+    }
 }
 
 const buttons = document.querySelectorAll(".button");
 
 for(let button of buttons){
     button.addEventListener('click',function(event){
-        const target = event.target;
-
-        inputDigit(target.innerText);
+        //const target = event.target;
+        if(button.classList.contains('clear')){
+            clearCalculator();
+        }
+        else{
+            inputDigit(button.innerText);
+        }
         updateDisplay();
     });
 }
