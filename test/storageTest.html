@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Storage Test Chamber</title>
+    </header>
+    <body>
+        <p>Anda sudah menekan tombol sebanyak <span id="count"></span> kali</p>
+        <button id="button">Klik di sini!</button>
+
+        <script>
+            const cacheKey="NUMBER";
+            if(typeof(Storage)!== "undefined"){
+                if(sessionStorage.getItem(cacheKey) === "undefined"){
+                    sessionStorage.setItem(cacheKey,0);
+                }
+                const button = document.querySelector("#button");
+                const count = document.querySelector("#count");
+                button.addEventListener('click',function(event){
+                    let number = sessionStorage.getItem(cacheKey);
+                    console.log(number);
+                    number++;
+                    sessionStorage.setItem(cacheKey,number);
+                    count.innerText = sessionStorage.getItem(cacheKey);
+                });
+            }
+            else{
+                alert("Browser tidak mendukung web storage");
+            }
+        </script>
+    </body>
+</html>
