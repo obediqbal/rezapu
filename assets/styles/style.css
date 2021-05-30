@@ -7,15 +7,8 @@
     cursor:default;
 }
 
-.base-bg {
-    --base-color: yellow;
-    background-color: yellow;
-}
-
-.base-color,
-*::before,
-*::after {
-    color: yellow;
+.base-color{
+    --base-color: rgb(255, 255, 0);
 }
 
 body {
@@ -63,19 +56,19 @@ main {
 }
 
 .red {
-    background-color: red;
+    background-color: rgb(255, 0, 119);
 }
 
 .blue {
-    background-color: blue;
+    background-color: rgb(0, 255, 255);
 }
 
 .green {
-    background-color: green;
+    background-color: rgb(145, 255, 0);
 }
 
 .yellow {
-    background: yellow;
+    background: rgb(255, 255, 0);
 }
 
 .left {
@@ -132,7 +125,6 @@ h2 {
 
 h2::after {
     content: ".";
-    font-size: 1.8em;
 }
 
 blockquote {
@@ -141,10 +133,11 @@ blockquote {
     font-size: 1.5em;
     text-align: right;
 }
-
+h2::after,
 blockquote::before,
 blockquote::after {
     font-size: 1.8em;
+    color: var(--base-color);
 }
 
 blockquote::before {
@@ -173,6 +166,7 @@ p {
     padding: 9px;
     border-radius: 20px;
     font-weight: 600;
+    background-color: var(--base-color);
 }
 
 @media screen and (max-width: 800px){
