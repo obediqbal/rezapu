@@ -29,6 +29,7 @@ body {
     background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
     cursor: pointer;
 }
+
 .button:hover {
     font-weight: bold;
 }
@@ -36,6 +37,7 @@ body {
 .double {
     flex-basis: 50%;
 }
+
 .display {
     padding: 10px 20px;
     background: #333333;
@@ -44,19 +46,54 @@ body {
     font-size: 2em;
     border: 1px solid black
 }
-.operator, 
-.negative, 
+
+.operator,
+.negative,
 .equals {
     background: orange;
 }
+
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 30px;
     margin-top: 20px;
 }
+
+.history {
+    width: 80%;
+    margin: 30px auto 0 auto;
+    overflow: scroll;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 16px;
+}
+
+th {
+    background-color: orange;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #d2d2d2;
+}
+
 @media screen and (max-width: 513px) {
     .button {
         padding: 10px;
+    }
+
+    .history {
+        width: 100%;
     }
 }
