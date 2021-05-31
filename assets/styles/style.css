@@ -4,12 +4,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor:default;
+    cursor: default;
 }
 
-.base-color{
+.base-color {
     --themeColor: rgb(255, 255, 0);
     --secondColor: #1c1c1c;
+    -webkit-transition: background-color 750ms ease;
+    -moz-transition: background-color 750ms ease;
+    -o-transition: background-color 750ms ease;
+    transition: background-color 750ms ease;
 }
 
 body {
@@ -23,12 +27,12 @@ header {
     background-color: var(--themeColor);
 }
 
-figure:hover{
-    cursor:grabbing;
+figure:hover {
+    cursor: grabbing;
 }
 
 img:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 main {
@@ -44,16 +48,19 @@ main {
 .grow {
     flex-grow: 1;
 }
+
 img {
     width: 33%;
     height: 100%;
 }
+
 figure {
     width: 40%;
     height: 100%;
     margin: 0 auto;
 }
-.palette{
+
+.palette {
     width: 100%;
     height: 30px;
     padding: 0 40px 20px 40px;
@@ -61,7 +68,7 @@ figure {
 
 .color {
     margin-right: 20px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .red {
@@ -139,6 +146,7 @@ blockquote {
     font-size: 1.5em;
     text-align: right;
 }
+
 h2::after,
 blockquote::before,
 blockquote::after {
@@ -158,7 +166,7 @@ blockquote::after {
 
 footer {
     font-size: 0.7em;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     bottom: 10px;
     width: 100%;
     text-align: center;
@@ -176,21 +184,22 @@ p {
 }
 
 @media screen and (max-width: 760px) {
-    h1{
+    h1 {
         font-size: 3em;
     }
 }
 
 @media screen and (max-width: 600px) {
-    h1{
+    h1 {
         font-size: 2em;
     }
+
     .first {
         display: none;
     }
 }
 
-@media screen and (max-width: 460px){
+@media screen and (max-width: 460px) {
     .second {
         display: none;
     }
