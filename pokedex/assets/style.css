@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Poppins',sans-serif;
+    font-size: 12px;
 }
 
 .flex {
@@ -19,7 +20,9 @@ body {
 .grow2 {
     flex-grow: 2;
 }
-
+.basis0 {
+    flex-basis:0;
+}
 .basis {
     flex-basis: 33.33333%;
 }
@@ -50,7 +53,7 @@ body {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    border: 5px solid rgb(247, 251, 255);
+    border: 5px solid rgba(255, 255, 255, 0.4);
 }
 
 .pokemon-details {
@@ -59,22 +62,23 @@ body {
 
 .pokemon-potrait {
     margin: 10px auto;
-    width: 55%;
+    width: 45%;
 }
 
-.pokemon-data {
+#pokemon-data {
     margin: 5px auto;
     text-align: center;
 }
-.pokemon-data p {
-    font-size: 0.9em;
+#pokemon-data p {
     padding: 10px 15px;
+    color: #4C6E84;
 }
 .elements {
     padding: 5px;
 }
 .elements div {
-    padding: 0.3em;
+    padding: 0.7em;
+    font-size: 1.2em;
     border-radius: 20px;
     color: white;
     margin-right: 5px;
@@ -104,8 +108,9 @@ body {
     flex-basis: 14.285714%;
     text-align: center;
     padding: 0.5em;
-    font-size: 0.8em;
+    font-size: 1.2em;
     margin: 0.3em;
+    margin-bottom: 0.8em;
 }
 .today {
     background-color: rgb(13, 236, 218)!important;
@@ -120,8 +125,11 @@ body {
 .grey {
     color:rgb(146, 146, 146);
 }
-section {
-    height: 100%;
+section>div{
+    height: auto;
+}
+section>div>div {
+    height:100%;
 }
 img {
     width: 100%;
@@ -137,5 +145,6 @@ article {
     margin: 0 0 0 auto;
     padding: 30px;
     width: 85%;
-    background-color: rgb(238, 247, 255);
+    background-color: #F2F8FF;
+    height: 100%;
 }
