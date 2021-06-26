@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rakbukuku</title>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body>
+        <header>
+            <h1 align="center">Rakbukuku</h1>
+            <nav>
+                <div id="addNavButton" class="pointer">
+                    <div>
+                        <h4>Masukkan Buku Baru</h4>
+                    </div>
+                </div>
+                <div id="rakNav">
+                    <div id="rakNavButton" class="pointer">
+                        <h4>Rak Buku</h4> 
+                    </div>
+                    <form id="rakListNav" action="#">
+                        <div class="form-element">
+                            <input type="checkbox" id="sedangNav" name="sedangNav">
+                            <label for="sedangNav">Sedang dibaca</label>
+                        </div>
+                        <div class="form-element">
+                            <input type="checkbox" id="selesaiNav" name="selesaiNav">
+                            <label for="selesaiNav">Selesai dibaca</label>
+                        </div>
+                        <div class="form-element">
+                            <input type="checkbox" id="akanNav" name="akanNav">
+                            <label for="akanNav">Akan dibaca</label>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <!-- TAMBAH BUKU PANEL -->
+            <article id="addPanel" hidden>
+                <h2 align="center">Masukkan Buku Baru</h2>
+                <form id="newBook" action="#">
+                    <div class="form-element">
+                        <label for="judul">Judul</label><br>
+                        <input type="text" id="judul" name="judul" placeholder="The Lord of the Rings" maxlength=70 required><br>
+                    </div>
+                    <div class="form-element">
+                        <label for="penulis">Penulis</label><br>
+                        <input type="text" id="penulis" name="penulis" placeholder="J. R. R. Tolkien" maxlength=30 required><br>
+                    </div>
+                    <div class="form-element">
+                        <label for="tahun">Tahun terbit</label><br>
+                        <input type="number" id="tahun" name="tahun" placeholder="1954" max=2021 min=1444 required><br>
+                    </div>
+                    <div class="form-element">
+                        <input type="radio" id="sedang" name="status" checked>
+                        <label for="sedang">Sedang dibaca</label>
+                        <input type="radio" id="selesai" name="status">
+                        <label for="selesai">Selesai dibaca</label>
+                        <input type="radio" id="akan" name="status">
+                        <label for="akan">Akan dibaca</label>
+                        <select id="rating" name="rating">
+                            <option value="-">Rate buku</option>
+                            <option value="10">(10) Keren abis</option>
+                            <option value="9">(9) Mantap</option>
+                            <option value="8">(8) Bagus sekali</option>
+                            <option value="7">(7) Bagus</option>
+                            <option value="6">(6) Ok</option>
+                            <option value="5">(5) Hmm</option>
+                            <option value="4">(4) Meh</option>
+                            <option value="3">(3) Jelek</option>
+                            <option value="2">(2) Jelek sekali</option>
+                            <option value="1">(1) Tidak layak baca</option>
+                        </select>
+                    </div>
+                    <div class="form-element">
+
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" value="Tambahkan buku">
+                    </div>
+                    <div id="messageSubmit"></div>
+                </form>
+            </article>
+
+            <!-- RAK BUKU PANEL -->
+            <article id="rakPanel">
+                <h2 align="center">Rak Buku</h2>
+                <div id="sedangPanel" hidden>a</div>
+                <div id="selesaiPanel" hidden>b</div>
+                <div id="akanPanel" hidden>c</div>
+            </article>
+        </main>
+
+        <script src="assets/addForm.js"></script>
+        <script src="assets/nav.js"></script>
+        <script src="assets/load.js"></script>
+    </body>
+</html>

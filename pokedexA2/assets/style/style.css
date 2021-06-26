@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    outline: 1px solid red;
+    margin: 0;
+}
+body {
+    background-color:#F2F8FF;
+}
+header {
+    position: fixed;
+    background-color: white;
+    float: left;
+    width: 15%;
+    height: 100vh;
+}
+main { 
+    width: 85%;
+    height: 100%;
+    height: auto;
+    padding: 30px;
+    float: right;
+}
+.card {
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    outline: 6px solid rgba(255, 255, 255, 0.4);
+    padding: 10px;
+}
+.heading {
+    width: 100%;
+}
+figure {
+    width: 60%;
+}
+img {
+    height:auto;
+    width: 100%;
+}
+p {
+    text-align: center;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+.outer-container {
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.outer-container:last-child {
+    margin-bottom: 0;
+}
+.double {
+    flex-grow: 2;
+    flex-shrink: 2;
+    flex-basis: 100%;
+}
+.inner-container {
+    flex: 1;
+    margin-right: 30px;
+}
+.inner-container:last-child {
+    margin-right: 0;
+}
+#calendar {
+    display: flex;
+    flex-direction: column;
+}
+#calendar>div {
+    display: flex;
+    flex: 1;
+}
+#calendar>div>div {
+    flex: 1;
+    margin: 0.3em;
+}
+#calendar p {
+    flex: 1;
+    text-align: center;
+    padding: 0.5em;
+}
+.calendar-head {
+    font-weight: bolder;
+}

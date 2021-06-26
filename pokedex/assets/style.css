@@ -21,7 +21,7 @@ body {
     flex-grow: 2;
 }
 .basis0 {
-    flex-basis:0;
+    flex-basis: 0;
 }
 .basis {
     flex-basis: 33.33333%;
@@ -98,13 +98,13 @@ body {
 .fire {
     background-color: red;
 }
-#calendar div{
+#calendar>div{
     display: flex;
     flex-grow: 1;
     flex-direction: row;
 }
 
-#calendar div p {
+#calendar>div>p {
     flex-basis: 14.285714%;
     text-align: center;
     padding: 0.5em;
