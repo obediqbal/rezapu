@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <!--
+        TODO:
+        1. rak buku 1 2 3
+        2. preview add buku (v)
+        3. search function
+    -->
     <head>
         <title>Rakbukuku</title>
         <link rel="stylesheet" href="assets/style.css">
@@ -73,13 +79,17 @@
                         </select>
                     </div>
                     <div class="form-element">
-
-                    </div>
-                    <div class="form-element">
                         <input type="submit" value="Tambahkan buku">
                     </div>
                     <div id="messageSubmit"></div>
                 </form>
+                <div id="previewAdd">
+                    <div id="judulPrev">Judul : <span>-</span></div>
+                    <div id="penulisPrev">Penulis : <span>-</span></div>
+                    <div id="tahunPrev">Tahun terbit : <span>-</span></div>
+                    <div id="statusPrev"><span>Sedang dibaca</span></div>
+                    <div id="ratePrev">(<span>-</span>)</div>
+                </div>
             </article>
 
             <!-- RAK BUKU PANEL -->
@@ -93,6 +103,7 @@
 
         <script src="assets/addForm.js"></script>
         <script src="assets/nav.js"></script>
+        <script src="assets/data.js"></script>
         <script src="assets/load.js"></script>
     </body>
 </html>
