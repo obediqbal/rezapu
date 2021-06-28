@@ -47,7 +47,7 @@
                 <form id="newBook" action="#">
                     <div class="form-element">
                         <label for="judul">Judul</label><br>
-                        <input type="text" id="judul" name="judul" placeholder="The Lord of the Rings" maxlength=70 required><br>
+                        <input type="text" id="judul" name="judul" placeholder="The Lord of the Rings" maxlength=60 required><br>
                     </div>
                     <div class="form-element">
                         <label for="penulis">Penulis</label><br>
@@ -95,12 +95,19 @@
             <!-- RAK BUKU PANEL -->
             <article id="rakPanel">
                 <h2 align="center">Rak Buku</h2>
-                <div id="sedangPanel" hidden>a</div>
-                <div id="selesaiPanel" hidden>b</div>
-                <div id="akanPanel" hidden>c</div>
+                <div id="sedangPanel" hidden>
+                    <h3>Sedang Dibaca</h3>
+                </div>
+                <div id="selesaiPanel" hidden>
+                    <h3>Selesai Dibaca</h3>
+                </div>
+                <div id="akanPanel" hidden>
+                    <h3>Akan Dibaca</h3>
+                </div>
             </article>
         </main>
 
+        <script src="assets/dom.js"></script>
         <script src="assets/addForm.js"></script>
         <script src="assets/nav.js"></script>
         <script src="assets/data.js"></script>
