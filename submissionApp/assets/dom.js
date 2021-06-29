@@ -1,6 +1,6 @@
-const uncompletedBookList = document.getElementById("sedangPanel");
-const completedBookList = document.getElementById("selesaiPanel");
-const plannedBookList = document.getElementById("akanPanel");
+const uncompletedBookList = document.getElementById("uncompleted-list");
+const completedBookList = document.getElementById("completed-list");
+const plannedBookList = document.getElementById("planned-list");
 const BOOK_ITEM_ID = "bookId"
 
 function createButton(){

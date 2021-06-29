@@ -44,10 +44,10 @@ rakList.addEventListener("input", ()=>{
     let i=0
     while(i<3){
         if(rakList.children[i].children[0].checked){
-            rakPanel.children[i+1].removeAttribute("hidden");
+            rakPanel.children[1].children[i].removeAttribute("hidden");
         }
         else{
-            rakPanel.children[i+1].setAttribute("hidden",true);
+            rakPanel.children[1].children[i].setAttribute("hidden",true);
         }
         i++;
     }

@@ -20,6 +20,10 @@ header {
     color: white;
 }
 
+h1 {
+    cursor: default;
+}
+
 nav {
     margin-top: 2em;
 }
@@ -97,7 +101,6 @@ input[type="submit"] {
     width: 40%;
     height: auto;
     cursor: pointer;
-    margin: 0 auto;
 }
 
 input[type="submit"]:focus {

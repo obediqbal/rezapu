@@ -48,14 +48,14 @@
                     <form id="newBook" action="#">
                         <div class="form-element">
                             <label for="judul">Judul</label><br>
-                            <input type="text" id="judul" name="judul" placeholder="The Lord of the Rings" maxlength=60 required><br>
+                            <input type="text" id="judul" name="judul" placeholder="The Lord of the Rings" maxlength=50 required><br>
                         </div>
                         <div class="form-element">
                             <label for="penulis">Penulis</label><br>
                             <input type="text" id="penulis" name="penulis" placeholder="J. R. R. Tolkien" maxlength=30 required><br>
                         </div>
                         <div class="form-element">
-                            <label for="tahun">Tahun terbit</label><br>
+                            <label for="tahun">Tahun</label><br>
                             <input type="number" id="tahun" name="tahun" placeholder="1954" max=2021 min=1444 required><br>
                         </div>
                         <div class="form-element">
@@ -79,8 +79,8 @@
                                 <option value="1">(1) Tidak layak baca</option>
                             </select><br>
                         </div>
-                        <div class="form-element" align="center">
-                            <input type="submit" value="Simpan" align="center">
+                        <div class="form-element">
+                            <input type="submit" value="Simpan">
                         </div>
                         <div id="messageSubmit"></div>
                     </form>
@@ -88,7 +88,7 @@
                 <div id="previewAdd">
                     <div id="judulPrev">Judul : <span>-</span></div>
                     <div id="penulisPrev">Penulis : <span>-</span></div>
-                    <div id="tahunPrev">Tahun terbit : <span>-</span></div>
+                    <div id="tahunPrev">Tahun : <span>-</span></div>
                     <div id="statusPrev"><span>Sedang dibaca</span></div>
                     <div id="ratePrev">(<span>-</span>)</div>
                 </div>
@@ -97,17 +97,25 @@
             <!-- RAK BUKU PANEL -->
             <article id="rakPanel">
                 <h2 align="center">Rak Buku</h2>
-                <div id="sedangPanel" hidden>
-                    <h3>Sedang Dibaca</h3>
-                    <div class="card"></div>
-                </div>
-                <div id="selesaiPanel" hidden>
-                    <h3>Selesai Dibaca</h3>
-                    <div class="card"></div>
-                </div>
-                <div id="akanPanel" hidden>
-                    <h3>Akan Dibaca</h3>
-                    <div class="card"></div>
+                <div class="card">
+                    <div id="sedangPanel" hidden>
+                        <h3>Sedang Dibaca</h3>
+                        <hr>
+                        <div id="uncompleted-list" class="container"></div>
+                        <br>
+                    </div>
+                    <div id="selesaiPanel" hidden>
+                        <h3>Selesai Dibaca</h3>
+                        <hr>
+                        <div id="completed-list" class="container"></div>
+                        <br>
+                    </div>
+                    <div id="akanPanel" hidden>
+                        <h3>Akan Dibaca</h3>
+                        <hr>
+                        <div id="planned-list" class="container"></div>
+                        <br>
+                    </div>
                 </div>
             </article>
         </main>

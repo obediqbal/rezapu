@@ -48,7 +48,6 @@ submitForm.addEventListener("submit", function (event) {
 
     bukubuku.push(bukuObject);
     buku[BOOK_ITEM_ID] = bukuObject.id;
-    console.log(bukubuku);
 
     if(status==0) uncompletedBookList.append(buku);
     else if(status==1) completedBookList.append(buku);
