@@ -16,7 +16,7 @@
             <nav>
                 <div id="addNavButton" class="pointer">
                     <div>
-                        <h4>Masukkan Buku Baru</h4>
+                        <h4>Tambahkan Buku</h4>
                     </div>
                 </div>
                 <div id="rakNav">
@@ -43,46 +43,48 @@
         <main>
             <!-- TAMBAH BUKU PANEL -->
             <article id="addPanel" hidden>
-                <h2 align="center">Masukkan Buku Baru</h2>
-                <form id="newBook" action="#">
-                    <div class="form-element">
-                        <label for="judul">Judul</label><br>
-                        <input type="text" id="judul" name="judul" placeholder="The Lord of the Rings" maxlength=60 required><br>
-                    </div>
-                    <div class="form-element">
-                        <label for="penulis">Penulis</label><br>
-                        <input type="text" id="penulis" name="penulis" placeholder="J. R. R. Tolkien" maxlength=30 required><br>
-                    </div>
-                    <div class="form-element">
-                        <label for="tahun">Tahun terbit</label><br>
-                        <input type="number" id="tahun" name="tahun" placeholder="1954" max=2021 min=1444 required><br>
-                    </div>
-                    <div class="form-element">
-                        <input type="radio" id="sedang" name="status" checked>
-                        <label for="sedang">Sedang dibaca</label>
-                        <input type="radio" id="selesai" name="status">
-                        <label for="selesai">Selesai dibaca</label>
-                        <input type="radio" id="akan" name="status">
-                        <label for="akan">Akan dibaca</label>
-                        <select id="rating" name="rating">
-                            <option value="-">Rate buku</option>
-                            <option value="10">(10) Keren sekali</option>
-                            <option value="9">(9) Wow</option>
-                            <option value="8">(8) Bagus sekali</option>
-                            <option value="7">(7) Bagus</option>
-                            <option value="6">(6) Ok</option>
-                            <option value="5">(5) Hmm</option>
-                            <option value="4">(4) Meh</option>
-                            <option value="3">(3) Jelek</option>
-                            <option value="2">(2) Jelek sekali</option>
-                            <option value="1">(1) Tidak layak baca</option>
-                        </select>
-                    </div>
-                    <div class="form-element">
-                        <input type="submit" value="Tambahkan buku">
-                    </div>
-                    <div id="messageSubmit"></div>
-                </form>
+                <h2 align="center">Tambahkan Buku</h2>
+                <div class="card">
+                    <form id="newBook" action="#">
+                        <div class="form-element">
+                            <label for="judul">Judul</label><br>
+                            <input type="text" id="judul" name="judul" placeholder="The Lord of the Rings" maxlength=60 required><br>
+                        </div>
+                        <div class="form-element">
+                            <label for="penulis">Penulis</label><br>
+                            <input type="text" id="penulis" name="penulis" placeholder="J. R. R. Tolkien" maxlength=30 required><br>
+                        </div>
+                        <div class="form-element">
+                            <label for="tahun">Tahun terbit</label><br>
+                            <input type="number" id="tahun" name="tahun" placeholder="1954" max=2021 min=1444 required><br>
+                        </div>
+                        <div class="form-element">
+                            <input type="radio" id="sedang" name="status" checked>
+                            <label for="sedang">Sedang dibaca</label>
+                            <input type="radio" id="selesai" name="status">
+                            <label for="selesai">Selesai dibaca</label>
+                            <input type="radio" id="akan" name="status">
+                            <label for="akan">Akan dibaca</label>
+                            <select id="rating" name="rating">
+                                <option value="-">Rate buku</option>
+                                <option value="10">(10) Keren sekali</option>
+                                <option value="9">(9) Wow</option>
+                                <option value="8">(8) Bagus sekali</option>
+                                <option value="7">(7) Bagus</option>
+                                <option value="6">(6) Ok</option>
+                                <option value="5">(5) Hmm</option>
+                                <option value="4">(4) Meh</option>
+                                <option value="3">(3) Jelek</option>
+                                <option value="2">(2) Jelek sekali</option>
+                                <option value="1">(1) Tidak layak baca</option>
+                            </select><br>
+                        </div>
+                        <div class="form-element" align="center">
+                            <input type="submit" value="Simpan" align="center">
+                        </div>
+                        <div id="messageSubmit"></div>
+                    </form>
+                </div>
                 <div id="previewAdd">
                     <div id="judulPrev">Judul : <span>-</span></div>
                     <div id="penulisPrev">Penulis : <span>-</span></div>
@@ -97,12 +99,15 @@
                 <h2 align="center">Rak Buku</h2>
                 <div id="sedangPanel" hidden>
                     <h3>Sedang Dibaca</h3>
+                    <div class="card"></div>
                 </div>
                 <div id="selesaiPanel" hidden>
                     <h3>Selesai Dibaca</h3>
+                    <div class="card"></div>
                 </div>
                 <div id="akanPanel" hidden>
                     <h3>Akan Dibaca</h3>
+                    <div class="card"></div>
                 </div>
             </article>
         </main>
