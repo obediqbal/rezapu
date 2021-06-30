@@ -1,15 +1,4 @@
-const submitForm = document.getElementById("newBook");
-const judulBuku = document.getElementById("judul");
-const penulisBuku = document.getElementById("penulis");
-const tahunBuku = document.getElementById("tahun");
-const sedangStatus = document.getElementById("sedang");
-const selesaiStatus = document.getElementById("selesai");
-const akanStatus = document.getElementById("akan");
-const ratingBuku = document.getElementById("rating");
-const messageSubmit = document.getElementById("messageSubmit");
-const preview = document.getElementById("previewAdd")
-
-function showSuccessMessage() {
+function showAddMessage() {
     messageSubmit.innerHTML = "";
 
     let judulQuote = document.createElement("span");
@@ -43,18 +32,12 @@ submitForm.addEventListener("submit", function (event) {
     const status = statusToInt();
     const rate = ratingBuku.value;
 
-    const buku = makeBuku(judul,penulis,tahun,statusString,rate);
-    const bukuObject = composeBukuObject(judul, penulis, tahun, statusString, rate);
+    if(heading.innerText==ADD_BOOK_HEADING) addBuku(judul,penulis,tahun,status,statusString,rate);
+    else editBuku(judul,penulis,tahun,status,statusString,rate);
 
-    bukubuku.push(bukuObject);
-    buku[BOOK_ITEM_ID] = bukuObject.id;
-
-    if(status==0) uncompletedBookList.append(buku);
-    else if(status==1) completedBookList.append(buku);
-    else plannedBookList.append(buku);
-
-    showSuccessMessage();
+    showAddMessage();
     submitForm.reset();
+    resetPreview();
 });
 
 for (let i = 0; i < 3; i++) {
