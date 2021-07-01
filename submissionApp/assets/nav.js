@@ -33,6 +33,7 @@ function onFocusReset(){
 
 function changeFocusTo(element) {
     panelReset();
+    updateAllPreview();
     onFocusReset();
 
     element.classList.add("onFocusBg");
