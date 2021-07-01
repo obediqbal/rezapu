@@ -8,9 +8,22 @@ const sedangPanel = document.getElementById("sedangPanel");
 const selesaiPanel = document.getElementById("selesaiPanel");
 const akanPanel = document.getElementById("akanPanel");
 
+addNavButton.addEventListener("click", () => {
+    changeFocusTo(addNavButton);
+    addPanel.removeAttribute("hidden");
+});
+
+rakNavButton.addEventListener("click", () => {
+    changeFocusTo(rakNav);
+    rakPanel.removeAttribute("hidden");
+    rakList.classList.toggle("show");
+});
+
 function panelReset() {
     addPanel.setAttribute("hidden", true);
     rakPanel.setAttribute("hidden", true);
+    resetAddMessage();
+    if(heading.innerText == EDIT_BOOK_HEADING) modeToAdd();
 }
 
 function onFocusReset(){
@@ -28,17 +41,6 @@ function changeFocusTo(element) {
         rakList.classList.remove("show");
     }
 }
-
-addNavButton.addEventListener("click", () => {
-    changeFocusTo(addNavButton);
-    addPanel.removeAttribute("hidden");
-});
-
-rakNavButton.addEventListener("click", () => {
-    changeFocusTo(rakNav);
-    rakPanel.removeAttribute("hidden");
-    rakList.classList.toggle("show");
-});
 
 rakList.addEventListener("input", ()=>{
     let i=0

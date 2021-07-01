@@ -1,37 +1,8 @@
-const submitForm = document.getElementById("newBook");
-const judulBuku = document.getElementById("judul");
-const penulisBuku = document.getElementById("penulis");
-const tahunBuku = document.getElementById("tahun");
-const sedangStatus = document.getElementById("sedang");
-const selesaiStatus = document.getElementById("selesai");
-const akanStatus = document.getElementById("akan");
-const radioBuku = submitForm.children[3];
-const ratingBuku = document.getElementById("rating");
-const messageSubmit = document.getElementById("messageSubmit");
-const preview = document.getElementById("previewAdd")
-const heading = document.getElementById("addPanel").children[0];
-
-const ADD_BOOK_HEADING = "Tambahkan Buku";
-const EDIT_BOOK_HEADING = "Sunting Buku";
-
 const uncompletedBookList = document.getElementById("uncompleted-list");
 const completedBookList = document.getElementById("completed-list");
 const plannedBookList = document.getElementById("planned-list");
 const BOOK_ITEM_ID = "bookId"
-
-function modeToAdd() {
-    heading.innerText = ADD_BOOK_HEADING;
-    submitForm.reset();
-}
-
-function modeToEdit(judul, penulis, tahun, status, rate) {
-    heading.innerText = EDIT_BOOK_HEADING;
-    judulBuku.value = judul;
-    penulisBuku.value = penulis;
-    tahunBuku.value = tahun;
-    radioBuku.children[status * 2].checked = true;
-    ratingBuku.value = rate;
-}
+let el;
 
 function createButton(buttonTypeClass, eventListener) {
     const button = document.createElement("button");
@@ -48,12 +19,17 @@ function removeBookFromList(element) {
 }
 
 function editBookFromList(element) {
+    panelReset();
     const buku = findBuku(element[BOOK_ITEM_ID]);
-
+    addPanel.removeAttribute("hidden");
+    el=element;
+    modeToEdit(buku.title,buku.author,buku.year,buku.status,buku.rating);
 }
 
 function createEditButton() {
-
+    return createButton("edit-button",function(event){
+        editBookFromList(event.currentTarget.parentElement);
+    });
 }
 
 function createRemoveButton() {
@@ -62,18 +38,14 @@ function createRemoveButton() {
     });
 }
 
-function resetPreview() {
-    let i =0;
-    while(i<5){
-        preview.children[i].children[0].innerText="-";
-        i++;
-    }
-    preview.children[3].children[0].innerText = "Sedang Dibaca";
+function editBuku(judul, penulis, tahun, status, statusString, rate){
+    removeBookFromList(el);
+    addBuku(judul, penulis, tahun, status, statusString, rate);
 }
 
 function addBuku(judul, penulis, tahun, status, statusString, rate) {
     const buku = makeBuku(judul, penulis, tahun, statusString, rate);
-    const bukuObject = composeBukuObject(judul, penulis, tahun, statusString, rate);
+    const bukuObject = composeBukuObject(judul, penulis, tahun, status, rate);
 
     bukubuku.push(bukuObject);
     buku[BOOK_ITEM_ID] = bukuObject.id;
