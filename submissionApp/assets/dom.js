@@ -77,11 +77,17 @@ function makeBuku(judul, penulis, tahun, status, rate) {
 
     const textContainer = document.createElement("div");
     textContainer.append(title, author, year, statusBuku);
+    textContainer.classList.add("text-on-book-container");
+
+    const buttons = document.createElement("div");
+    buttons.append(createEditButton());
+    buttons.append(createRemoveButton());
+    buttons.classList.add("buttons-on-book-container")
 
     const container = document.createElement("div");
     container.append(textContainer);
-    container.append(createEditButton());
-    container.append(createRemoveButton());
+    container.append(buttons);
+    container.classList.add("book-container");
 
     return container;
 }

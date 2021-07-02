@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     transition: all 150ms ease;
-
 }
 
 body {
@@ -92,7 +91,8 @@ h2 {
 }
 
 input[type="submit"] {
-    padding: 10px 15px;;
+    padding: 10px 15px;
+    ;
     background-color: rgb(0, 180, 0);
     color: white;
     border: 0;
@@ -116,7 +116,9 @@ input {
     width: 100%;
 }
 
-input[type="text"], input[type="number"], select {
+input[type="text"],
+input[type="number"],
+select {
     height: 2em;
 }
 
@@ -135,4 +137,40 @@ input[type="radio"]:first-child {
 
 #messageSubmit {
     color: red;
+}
+
+.text-on-book-container {
+    width: 85%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.buttons-on-book-container {
+    width: 15%;
+    display: inline-block;
+}
+
+.book-container {
+    border-radius: 15px;
+}
+
+.edit-button {
+    background: url(../assets/img/edit.png);
+    background-size: contain;
+    margin-left: auto;
+    width: 2em;
+    height: 2em;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-button {
+    background: url(../assets/img/remove.png);
+    background-size: contain;
+    margin-left: auto;
+    width: 2em;
+    height: 2em;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
 }
