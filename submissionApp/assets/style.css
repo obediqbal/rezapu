@@ -141,36 +141,54 @@ input[type="radio"]:first-child {
 
 .text-on-book-container {
     width: 85%;
-    display: inline-block;
     padding: 10px;
 }
 
-.buttons-on-book-container {
+.misc-on-book-container {
     width: 15%;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 }
 
 .book-container {
     border-radius: 15px;
+    display: flex;
+}
+
+.star-color {
+    background: url(../assets/img/star-color.png);
+    background-size: cover;
+    margin: 5px;
+    width: auto;
+    height: 75%;
+    border: none;
+}
+
+.star-grayscale {
+    background: url(../assets/img/star-grayscale.png);
+    background-size: cover;
+    margin: 5px;
+    width: auto;
+    height: 75%;
+    border: none;
 }
 
 .edit-button {
     background: url(../assets/img/edit.png);
-    background-size: contain;
-    margin-left: auto;
-    width: 2em;
-    height: 2em;
+    background-size: cover;
+    margin: 5px;
+    width: auto;
+    height: 75%;
     border: none;
     cursor: pointer;
 }
 
 .remove-button {
     background: url(../assets/img/remove.png);
-    background-size: contain;
-    margin-left: auto;
-    width: 2em;
-    height: 2em;
+    background-size: cover;
+    margin: 5px;
+    width: auto;
+    height: 75%;
     border: none;
     cursor: pointer;
-    margin-left: 10px;
 }
