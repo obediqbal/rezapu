@@ -9,9 +9,7 @@ function createStar(rate){
     const star = document.createElement("div");
     const rating = document.createElement("div");
 
-    rating.innerText=rate;
-    rating.style.setProperty("width","100%");
-    rating.style.setProperty("height","auto");
+    rating.innerText="("+rate+")";
 
     if(rate!="-") {
         star.classList.add("star-color");
@@ -19,14 +17,19 @@ function createStar(rate){
     }
     else {
         star.classList.add("star-grayscale");
+        rating.style.setProperty("color","grey");
     }
 
-    container.style.setProperty("align-items","flex-start");
+    container.style.setProperty("align-items","center");
     container.style.setProperty("display","flex");
     container.style.setProperty("flex","1");
 
+
     star.style.setProperty("flex","1");
     rating.style.setProperty("flex","1");
+    rating.style.setProperty("font-size","1.5em");
+    rating.style.setProperty("font-weight","bold");
+    rating.style.setProperty("text-align","center");
 
     container.append(star);
     container.append(rating);
@@ -40,6 +43,7 @@ function createButton(buttonTypeClass, eventListener) {
         eventListener(event);
     });
     button.style.setProperty("flex","1");
+
     return button;
 }
 
@@ -52,13 +56,14 @@ function editBookFromList(element) {
     panelReset();
     const buku = findBuku(element[BOOK_ITEM_ID]);
     addPanel.removeAttribute("hidden");
+    console.log(element);
     el=element;
     modeToEdit(buku.title,buku.author,buku.year,buku.status,buku.rating);
 }
 
 function createEditButton() {
     return createButton("edit-button",function(event){
-        editBookFromList(event.currentTarget.parentElement);
+        editBookFromList(event.currentTarget.parentElement.parentElement.parentElement);
     });
 }
 
@@ -116,11 +121,18 @@ function makeBuku(judul, penulis, tahun, status, rate) {
     buttons.style.setProperty("flex","1");
     buttons.style.setProperty("align-items","flex-end");
 
-    misc.append(createStar(rate));
+    const stars=createStar(rate);
+    stars.style.setProperty("flex","1");
+
+    misc.append(stars);
     misc.append(buttons)
 
     buttons.append(createEditButton());
     buttons.append(createRemoveButton());
+
+    buttons.style.setProperty("padding","10px");
+    misc.style.setProperty("padding","5px");
+
     misc.classList.add("misc-on-book-container")
 
     const container = document.createElement("div");

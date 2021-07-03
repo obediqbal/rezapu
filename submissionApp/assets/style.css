@@ -140,12 +140,12 @@ input[type="radio"]:first-child {
 }
 
 .text-on-book-container {
-    width: 85%;
+    flex-basis: 87%;
     padding: 10px;
 }
 
 .misc-on-book-container {
-    width: 15%;
+    flex-basis:13%;
     display: flex;
     flex-direction: column;
 }
@@ -158,25 +158,22 @@ input[type="radio"]:first-child {
 .star-color {
     background: url(../assets/img/star-color.png);
     background-size: cover;
-    margin: 5px;
     width: auto;
-    height: 75%;
+    height: 100%;
     border: none;
 }
 
 .star-grayscale {
     background: url(../assets/img/star-grayscale.png);
     background-size: cover;
-    margin: 5px;
     width: auto;
-    height: 75%;
+    height: 100%;
     border: none;
 }
 
 .edit-button {
     background: url(../assets/img/edit.png);
     background-size: cover;
-    margin: 5px;
     width: auto;
     height: 75%;
     border: none;
@@ -186,9 +183,9 @@ input[type="radio"]:first-child {
 .remove-button {
     background: url(../assets/img/remove.png);
     background-size: cover;
-    margin: 5px;
     width: auto;
     height: 75%;
     border: none;
     cursor: pointer;
+    margin-left: 5px;
 }
