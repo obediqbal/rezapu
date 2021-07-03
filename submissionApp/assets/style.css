@@ -12,6 +12,7 @@ body {
 
 header {
     padding: 10px;
+    position: fixed;
     float: left;
     width: 20%;
     height: 100vh;
@@ -141,12 +142,13 @@ input[type="radio"]:first-child {
 
 .book-title {
     font-size:1.5em;
+    margin-bottom: 10px;
     color: blue;
 }
 
 .text-on-book-container {
     flex-basis: 87%;
-    padding: 10px;
+    padding: 15px;
 }
 
 .misc-on-book-container {
