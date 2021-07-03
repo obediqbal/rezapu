@@ -139,6 +139,11 @@ input[type="radio"]:first-child {
     color: red;
 }
 
+.book-title {
+    font-size:1.5em;
+    color: blue;
+}
+
 .text-on-book-container {
     flex-basis: 87%;
     padding: 10px;

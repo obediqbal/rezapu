@@ -56,8 +56,7 @@ function statusToInt() {
     else return 2;
 }
 
-function statusToString() {
-    const sint = statusToInt();
+function statusToString(sint) {
     if(sint==0) return "Sedang Dibaca";
     else if(sint==1) return "Selesai Dibaca";
     else return "Akan Dibaca";
@@ -68,13 +67,12 @@ submitForm.addEventListener("submit", function (event) {
     const judul = judulBuku.value;
     const penulis = penulisBuku.value;
     const tahun = tahunBuku.value;
-    const statusString = statusToString();
     const status = statusToInt();
     const rate = ratingBuku.value;
 
-    if(heading.innerText==ADD_BOOK_HEADING) addBuku(judul,penulis,tahun,status,statusString,rate);
+    if(heading.innerText==ADD_BOOK_HEADING) addBuku(judul,penulis,tahun,status,rate);
     else {
-        editBuku(judul,penulis,tahun,status,statusString,rate);
+        editBuku(judul,penulis,tahun,status,rate);
         panelReset();
         resetPreview();
         rakPanel.removeAttribute("hidden");
@@ -96,7 +94,7 @@ function updatePreview(index){
         }
     }
     else if(index<6){
-        preview.children[3].children[0].innerText = statusToString((index-3)*2);
+        preview.children[3].children[0].innerText = statusToString(statusToInt());
     }
     else{
         const target = document.getElementById("ratePrev").children[0];
