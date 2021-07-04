@@ -173,7 +173,8 @@ input[type="radio"]:first-child {
 
 .star-color {
     background: url(../assets/img/star-color.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: auto;
     height: 100%;
     border: none;
@@ -181,7 +182,8 @@ input[type="radio"]:first-child {
 
 .star-grayscale {
     background: url(../assets/img/star-grayscale.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: auto;
     height: 100%;
     border: none;
@@ -189,7 +191,8 @@ input[type="radio"]:first-child {
 
 .edit-button {
     background: url(../assets/img/edit.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: auto;
     height: 75%;
     border: none;
@@ -198,7 +201,8 @@ input[type="radio"]:first-child {
 
 .remove-button {
     background: url(../assets/img/remove.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: auto;
     height: 75%;
     border: none;
