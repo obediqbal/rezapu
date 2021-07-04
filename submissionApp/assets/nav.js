@@ -147,7 +147,7 @@ function findFilter(keyword){
     const bukubukuElement = document.querySelectorAll(".book-container");
     hideBuku();
     for(bukuElement of bukubukuElement){
-        if(bukuElement.children[0].children[0].innerText.toLowerCase().includes(keyword)){
+        if(bukuElement.children[0].children[0].innerText.toLowerCase().includes(keyword.toLowerCase())){
             showBuku(bukuElement);
         }
     }
