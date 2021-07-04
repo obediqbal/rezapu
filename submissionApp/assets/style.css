@@ -42,9 +42,18 @@ nav>div>div {
     cursor: pointer;
 }
 
+#findNav>input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+}
+
+#findNav {
+    margin-bottom: 35px;
+}
+
 #rakListNav {
     padding: 0 0 10px 20px;
-    display: none;
 }
 
 nav>div:hover,
@@ -57,8 +66,8 @@ nav>div:hover,
     color: blue;
 }
 
-.show {
-    display: block !important;
+.hide {
+    display: none !important;
 }
 
 #rakListNav input {

@@ -15,6 +15,8 @@ const sedangPanel = document.getElementById("sedangPanel");
 const selesaiPanel = document.getElementById("selesaiPanel");
 const akanPanel = document.getElementById("akanPanel");
 
+const findNav = document.getElementById("findNav").children[0];
+
 let navObject = {
     currentDisplay : "rak",
     isUncompletedChecked : false,
@@ -35,7 +37,7 @@ rakNavButton.addEventListener("click", () => {
     updateDisplayToStorage();
     refreshDisplay();
 
-    rakList.classList.toggle("show");
+    rakList.classList.toggle("hide");
 });
 
 function panelReset() {
@@ -58,7 +60,7 @@ function changeFocusTo(element) {
     element.classList.add("onFocusBg");
 
     if (element != rakNav) {
-        rakList.classList.remove("show");
+        rakList.classList.add("hide");
     }
 }
 
@@ -134,4 +136,19 @@ function saveDisplay() {
 
 function updateDisplayToStorage() {
     if (isStorageExist()) saveDisplay();
+}
+
+findNav.addEventListener("input",function(){
+    let keyword = findNav.value;
+    findFilter(keyword);
+});
+
+function findFilter(keyword){
+    const bukubukuElement = document.querySelectorAll(".book-container");
+    hideBuku();
+    for(bukuElement of bukubukuElement){
+        if(bukuElement.children[0].children[0].innerText.includes(keyword)){
+            showBuku(bukuElement);
+        }
+    }
 }

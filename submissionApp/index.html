@@ -15,6 +15,9 @@
         <header>
             <h1 align="center">Rakbukuku</h1>
             <nav>
+                <form id="findNav" action="#">
+                    <input type="text" placeholder="Cari buku" maxlength=40>
+                </form>
                 <div id="addNavButton" class="pointer">
                     <div>
                         <h4>Tambahkan Buku</h4>
@@ -24,7 +27,7 @@
                     <div id="rakNavButton" class="pointer">
                         <h4>Rak Buku</h4> 
                     </div>
-                    <form id="rakListNav" action="#">
+                    <form id="rakListNav" class="hide" action="#">
                         <div class="form-element">
                             <input type="checkbox" id="sedangNav" name="sedangNav">
                             <label for="sedangNav">Sedang dibaca</label>

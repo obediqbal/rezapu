@@ -136,3 +136,14 @@ function makeBuku(judul, penulis, tahun, rate) {
 
     return container;
 }
+
+function hideBuku(){
+    const bukubukuElement = document.querySelectorAll(".book-container");
+    for(bukuElement of bukubukuElement){
+        bukuElement.classList.add("hide");
+    }
+}
+
+function showBuku(element){
+    element.classList.remove("hide");
+}
