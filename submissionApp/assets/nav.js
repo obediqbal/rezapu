@@ -144,7 +144,7 @@ findNav.addEventListener("input",function(){
 });
 
 function findFilter(keyword){
-    const bukubukuElement = document.querySelectorAll(".book-container");
+    const bukubukuElement = document.querySelectorAll(".book-list");
     hideBuku();
     for(bukuElement of bukubukuElement){
         if(bukuElement.children[0].children[0].innerText.toLowerCase().includes(keyword.toLowerCase())){

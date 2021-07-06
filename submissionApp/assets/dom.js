@@ -115,6 +115,7 @@ function makeBuku(judul, penulis, tahun, rate) {
 
     const container = document.createElement("div");
     container.classList.add("book-container");
+    container.classList.add("book-list");
     container.append(textContainer);
     container.append(misc);
 
@@ -122,7 +123,7 @@ function makeBuku(judul, penulis, tahun, rate) {
 }
 
 function hideBuku() {
-    const bukubukuElement = document.querySelectorAll(".book-container");
+    const bukubukuElement = document.querySelectorAll(".book-list");
     for (bukuElement of bukubukuElement) {
         bukuElement.classList.add("hide");
     }
