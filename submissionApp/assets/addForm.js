@@ -10,6 +10,7 @@ const ratingBuku = document.getElementById("rating");
 const messageSubmit = document.getElementById("messageSubmit");
 const preview = document.getElementById("previewAdd")
 const heading = addPanel.children[0];
+const buttonMisc = document.getElementById("buttonMisc");
 
 const ADD_BOOK_HEADING = "Tambahkan Buku";
 const EDIT_BOOK_HEADING = "Sunting Buku";
@@ -93,17 +94,21 @@ function updatePreview(index){
             toChange.innerText = "-";
         }
     }
-    else if(index<6){
-        preview.children[3].children[0].innerText = statusToString(statusToInt());
-    }
-    else{
-        const target = document.getElementById("ratePrev").children[0];
-        target.innerText = ratingBuku.value;
+    else {
+        const previewMisc = document.getElementById("previewMisc");
+        previewMisc.innerHTML="";
+        buttonMisc.innerHTML="";
+        buttonMisc.append(createButton("edit-button",function(){}));
+        buttonMisc.append(createButton("remove-button",function(){}));
+    
+        const starMisc = createStar(ratingBuku.value);
+        previewMisc.append(starMisc);
+        previewMisc.append(buttonMisc);
     }
 }
 
 function updateAllPreview(){
-    for(let i = 0;i<=6;i++){
+    for(let i = 0;i<4;i++){
         updatePreview(i);
     }
 }
@@ -122,13 +127,9 @@ for (let i = 0; i < 3; i++) {
     target.addEventListener("input", function () {
         updatePreview(i);
     });
-
-    let target2 = submitForm.children[3];
-    target2.children[i * 2].addEventListener("input", function () {
-        updatePreview(i+3);
-    });
 }
 
 ratingBuku.addEventListener("input", function () {
-    updatePreview(6);
+    updatePreview(3);
+
 });

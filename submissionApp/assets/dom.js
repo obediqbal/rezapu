@@ -9,6 +9,9 @@ function createStar(rate) {
     const star = document.createElement("div");
     const rating = document.createElement("div");
 
+    container.classList.add("container-star")
+
+    rating.classList.add("rating-star");
     rating.innerText = "(" + rate + ")";
 
     if (rate != "-") {
@@ -18,17 +21,6 @@ function createStar(rate) {
         star.classList.add("star-grayscale");
         rating.style.setProperty("color", "grey");
     }
-
-    container.style.setProperty("align-items", "center");
-    container.style.setProperty("display", "flex");
-    container.style.setProperty("flex", "1");
-
-
-    star.style.setProperty("flex", "1");
-    rating.style.setProperty("flex", "1");
-    rating.style.setProperty("font-size", "1.5em");
-    rating.style.setProperty("font-weight", "bold");
-    rating.style.setProperty("text-align", "center");
 
     container.append(star);
     container.append(rating);
@@ -41,7 +33,6 @@ function createButton(buttonTypeClass, eventListener) {
     button.addEventListener("click", function (event) {
         eventListener(event);
     });
-    button.style.setProperty("flex", "1");
 
     return button;
 }
@@ -109,14 +100,12 @@ function makeBuku(judul, penulis, tahun, rate) {
     textContainer.classList.add("text-on-book-container");
 
     const misc = document.createElement("div");
+    misc.classList.add("misc-on-book-container")
+
     const buttons = document.createElement("div");
-    buttons.style.setProperty("display", "flex");
-    buttons.style.setProperty("flex-direction", "row");
-    buttons.style.setProperty("flex", "1");
-    buttons.style.setProperty("align-items", "flex-end");
+    buttons.classList.add("buttons-book-container");
 
     const stars = createStar(rate);
-    stars.style.setProperty("flex", "1");
 
     misc.append(stars);
     misc.append(buttons)
@@ -124,26 +113,21 @@ function makeBuku(judul, penulis, tahun, rate) {
     buttons.append(createEditButton());
     buttons.append(createRemoveButton());
 
-    buttons.style.setProperty("padding", "10px");
-    misc.style.setProperty("padding", "5px");
-
-    misc.classList.add("misc-on-book-container")
-
     const container = document.createElement("div");
+    container.classList.add("book-container");
     container.append(textContainer);
     container.append(misc);
-    container.classList.add("book-container");
 
     return container;
 }
 
-function hideBuku(){
+function hideBuku() {
     const bukubukuElement = document.querySelectorAll(".book-container");
-    for(bukuElement of bukubukuElement){
+    for (bukuElement of bukubukuElement) {
         bukuElement.classList.add("hide");
     }
 }
 
-function showBuku(element){
+function showBuku(element) {
     element.classList.remove("hide");
 }

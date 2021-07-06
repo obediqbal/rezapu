@@ -42,7 +42,7 @@ nav>div>div {
     cursor: pointer;
 }
 
-#findNav>input{
+#findNav>input {
     padding: 10px;
     border-radius: 5px;
     border: 0;
@@ -120,6 +120,7 @@ input[type="submit"]:focus {
 .card {
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.5);
     padding: 15px;
+    margin-bottom: 20px;
 }
 
 input {
@@ -150,20 +151,42 @@ input[type="radio"]:first-child {
 }
 
 .book-title {
-    font-size:1.5em;
+    font-size: 1.5em;
     margin-bottom: 10px;
     color: blue;
 }
 
 .text-on-book-container {
-    flex-basis: 87%;
+    flex-basis: 85%;
     padding: 15px;
 }
 
 .misc-on-book-container {
-    flex-basis:13%;
+    flex-basis: 15%;
     display: flex;
     flex-direction: column;
+    padding: 5px;
+}
+
+.buttons-book-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.container-star {
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+
+.rating-star {
+    flex: 1;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
 }
 
 .book-container {
@@ -179,6 +202,7 @@ input[type="radio"]:first-child {
     width: auto;
     height: 100%;
     border: none;
+    flex: 1;
 }
 
 .star-grayscale {
@@ -189,6 +213,7 @@ input[type="radio"]:first-child {
     width: auto;
     height: 100%;
     border: none;
+    flex: 1;
 }
 
 .edit-button {
@@ -200,6 +225,7 @@ input[type="radio"]:first-child {
     height: 75%;
     border: none;
     cursor: pointer;
+    flex: 1;
 }
 
 .remove-button {
@@ -212,4 +238,5 @@ input[type="radio"]:first-child {
     border: none;
     cursor: pointer;
     margin-left: 5px;
+    flex: 1;
 }
