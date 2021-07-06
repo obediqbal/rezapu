@@ -57,12 +57,6 @@ function statusToInt() {
     else return 2;
 }
 
-function statusToString(sint) {
-    if(sint==0) return "Sedang Dibaca";
-    else if(sint==1) return "Selesai Dibaca";
-    else return "Akan Dibaca";
-}
-
 submitForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const judul = judulBuku.value;
