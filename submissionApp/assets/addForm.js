@@ -118,7 +118,8 @@ function resetPreview() {
     while(i<3){
         preview.children[i].children[0].innerText="-";
         i++;
-        }
+    }
+    updatePreview(3);
 }
 
 for (let i = 0; i < 3; i++) {
