@@ -115,11 +115,10 @@ function updateAllPreview(){
 
 function resetPreview() {
     let i =0;
-    while(i<5){
+    while(i<3){
         preview.children[i].children[0].innerText="-";
         i++;
-    }
-    preview.children[3].children[0].innerText = "Sedang Dibaca";
+        }
 }
 
 for (let i = 0; i < 3; i++) {
