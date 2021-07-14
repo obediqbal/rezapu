@@ -8,55 +8,99 @@
 
 <body>
     <header>
-        <h1>PokeMonitor</h1>
-        <nav></nav>
+        <h1 align="center">PokeMonitor</h1>
+        <nav>
+            <div>
+                <h2>Dashboard</h2>
+            </div>
+            <div>
+                <h2>Store</h2>
+            </div>
+            <div>
+                <h2>Profile</h2>
+            </div>
+        </nav>
     </header>
     <main>
-        <aside></aside>
+        <aside class="outer-container">
+            <div class="inner-container" style="flex-basis: 80%">
+                <div class="card margin">
+                    <input type="text" id="searchBar" name="searchBar" placeholder="Search for pokemons, items, friends, dragon ball...">
+                </div>
+            </div>
+            <div class="inner-container" style="flex-basis: 20%">
+                <div class="card margin">
+                    <h4>Rezapu</h4>
+                </div>
+            </div>
+        </aside>
         <article class="flex">
             <div class="outer-container">
                 <div class="inner-container">
-                    <div class="card"> 
+                    <div class="card margin"> 
                         <div class="heading">
-                            <h2>My Pokemon</h2>
+                            <h3>My Pokemon</h3>
                         </div>
-                        <figure>
-                            <img src="assets/img/charmeleon.png" alt="charmeleon">
-                        </figure>
-                        <h3>Charmeleon</h3>
-                        <p>Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong
-                            foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares
-                            with a bluish white color.</p>
-                    </div>
-                </div>
-                <div class="inner-container">
-                    <div class="card">
-                        <div class="heading">
-                            <h2>Tournaments</h2>
-                        </div>
-                        <div id="calendar">
-                            <div class="calendar-head">
-                                <div><p>Su</p></div>
-                                <div><p>Mo</p></div>
-                                <div><p>Tu</p></div>
-                                <div><p>We</p></div>
-                                <div><p>Th</p></div>
-                                <div><p>Fr</p></div>
-                                <div><p>Sa</p></div>
+                        <div class="content" align="center">
+                            <figure>
+                                <img src="assets/img/charmeleon.png" alt="charmeleon">
+                            </figure>
+                            <h4>Charmeleon</h4>
+                            <p>Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong
+                                foe, it turns aggressive.</p>
+                            <div class="elements">
+                                <div class="fire">Fire</div>
+                                <div class="fire">Fire</div>
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="inner-container">
-                    <div class="card">wa</div>
+                    <div class="card margin">
+                        <div class="heading">
+                            <h3>Tournaments</h3>
+                        </div>
+                        <div class="content" align="center">
+                            <div id="calendar">
+                                <div class="calendar-head">
+                                    <div><p>Su</p></div>
+                                    <div><p>Mo</p></div>
+                                    <div><p>Tu</p></div>
+                                    <div><p>We</p></div>
+                                    <div><p>Th</p></div>
+                                    <div><p>Fr</p></div>
+                                    <div><p>Sa</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner-container">
+                    <div class="card margin">
+                        <div class="heading">
+                            <h3>Item Stock</h3>
+                        </div>
+                        <div class="content" align="center">
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="outer-container">
-                <div class="inner-container double">
-                    <div class="card">wa</div> 
-                </div>
                 <div class="inner-container">
-                    <div class="card">wa</div>
+                    <div class="card margin">
+                        <div class="heading">
+                            <h3>Region</h3>
+                        </div>
+                    </div> 
+                </div>
+                <div class="inner-container double">
+                    <div class="card margin">
+                        <div class="heading">
+                            <h3>Messages</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
