@@ -85,6 +85,12 @@ main {
 .fire {
     background-color: red;
 }
+.grass {
+    background-color: green;
+}
+.poison {
+    background-color: purple;
+}
 figure {
     width: 60%;
     padding: 20px;
@@ -107,6 +113,7 @@ p {
     display: flex;
     flex:1;
     flex-direction: row;
+    min-height: 480px;
     margin-bottom: 30px;
 }
 .outer-container:last-child {
@@ -126,22 +133,58 @@ p {
 .margin {
     margin-right: 0;
 }
+.pokemon-nav {
+    display: flex;
+    align-items: center;
+}
+.pokemon-nav>div {
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #CAE2F2;
+}
+.pokemon-nav>div:first-child {
+    margin-left: auto;
+}
+.pokemon-nav>div:last-child {
+    margin-right: auto;
+}
+.pokemon-nav>div {
+    margin: 5px;
+}
+.active-pokemon {
+    background-color: #4195D5!important;
+}
 #calendar {
     display: flex;
+    font-size: 12px;
     flex-direction: column;
 }
 #calendar>div {
     display: flex;
     flex: 1;
+    margin: 0.3em;
 }
 #calendar>div>div {
     flex: 1;
-    margin: 0.3em;
 }
 #calendar p {
     flex: 1;
+    padding: 0.7em;
     text-align: center;
-    padding: 0.5em;
+    border-radius: 5px;
+}
+.grey {
+    color: #CAE2F2;
+
+}
+.bg {
+    color : #6FAFDC;
+    background-color: #F7FBFD;
+}
+.today {
+    background-color: #4195D5;
+    color: white;
 }
 .calendar-head {
     font-weight: bolder;
