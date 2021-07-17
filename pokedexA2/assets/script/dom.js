@@ -11,19 +11,23 @@ class Pokemon {
 }
 
 function defaultPokemon() {
-    const charmeleon = new Pokemon("Charmeleon",
-                                    "assets/img/charmeleon.png",
-                                    "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive.",
+    const charmander = new Pokemon("Charmander",
+                                    "assets/img/charmander.png",
+                                    "Charmander is a bipedal, reptilian Pokemon with a primarily orange body and blue eyes.",
                                     ["Fire"]);
     const bulbasaur = new Pokemon("Bulbasaur",
                                     "assets/img/bulbasaur.png",
                                     "There is a plant seed on its back right from the day this Pokemon is born. The seed slowly grows larger.",
                                     ["Grass", "Poison"]);
-    pokemonList.push(charmeleon,bulbasaur);
+    const squirtle = new Pokemon("Squirtle",
+                                    "assets/img/squirtle.png",
+                                    "Squirtle is a small Pokemon that resembles a light-blue turtle.  It has large, purplish or reddish eyes.",
+                                    ["Water"])
+    pokemonList.push(charmander,bulbasaur,squirtle);
 }
 defaultPokemon();
 
-insertPokemonToMyPokemon(1);
+insertPokemonToMyPokemon(0);
 function insertPokemonToMyPokemon(index) {
     const pokemonI = pokemonList[index];
 
