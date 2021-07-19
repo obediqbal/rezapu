@@ -25,7 +25,8 @@
         <aside class="outer-container" style="min-height:auto">
             <div class="inner-container" style="flex-basis: 80%">
                 <div class="card margin">
-                    <input type="text" id="searchBar" name="searchBar" placeholder="Search for pokemons, items, friends, dragon ball...">
+                    <input type="text" id="searchBar" name="searchBar"
+                        placeholder="Search for pokemons, items, friends, dragon ball...">
                 </div>
             </div>
             <div class="inner-container" style="flex-basis: 20%">
@@ -37,15 +38,16 @@
         <article class="flex">
             <div class="outer-container">
                 <div class="inner-container">
-                    <div class="card margin"> 
+                    <div class="card margin">
                         <div class="heading">
                             <div class="icons">
                                 <div class="my-pokemon-icon"></div>
                             </div>
                             <h3>My Pokemon</h3>
-                            <div class="stats">
+                            <span></span>
+                            <div id="stats-button" class="stats-off">
                                 <div>
-                                    <div class="stats-icon"></div>
+                                    <div class="stats-icon stats-icon-off"></div>
                                     <p>Stats</p>
                                 </div>
                             </div>
@@ -72,17 +74,32 @@
                     <div class="card margin">
                         <div class="heading">
                             <h3>Tournaments</h3>
+                            <span></span>
                         </div>
                         <div class="content" align="center">
                             <div id="calendar">
                                 <div class="calendar-head">
-                                    <div><p>Su</p></div>
-                                    <div><p>Mo</p></div>
-                                    <div><p>Tu</p></div>
-                                    <div><p>We</p></div>
-                                    <div><p>Th</p></div>
-                                    <div><p>Fr</p></div>
-                                    <div><p>Sa</p></div>
+                                    <div>
+                                        <p>Su</p>
+                                    </div>
+                                    <div>
+                                        <p>Mo</p>
+                                    </div>
+                                    <div>
+                                        <p>Tu</p>
+                                    </div>
+                                    <div>
+                                        <p>We</p>
+                                    </div>
+                                    <div>
+                                        <p>Th</p>
+                                    </div>
+                                    <div>
+                                        <p>Fr</p>
+                                    </div>
+                                    <div>
+                                        <p>Sa</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -92,6 +109,7 @@
                     <div class="card margin">
                         <div class="heading">
                             <h3>Item Stock</h3>
+                            <span></span>
                         </div>
                         <div class="content" align="center">
 
@@ -104,13 +122,15 @@
                     <div class="card margin">
                         <div class="heading">
                             <h3>Region</h3>
+                            <span></span>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div class="inner-container double">
                     <div class="card margin">
                         <div class="heading">
-                            <h3>Messages</h3>
+                            <h3>Announcement</h3>
+                            <span></span>
                         </div>
                     </div>
                 </div>

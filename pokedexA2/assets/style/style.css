@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 
 * {
     box-sizing: border-box;
@@ -84,25 +85,99 @@ main {
     flex-basis: 65%;
 }
 
-.stats {
+span {
+    position: absolute;
+    color: red;
+    margin-top: 60px;
+}
+
+#stats-button {
     flex-basis: 25%;
     text-align: center;
     padding: 5px 10px;
+    cursor: pointer;
     border-radius: 100px;
-    border: 1px solid #9CC8E7;
 }
 
-.stats>div {
-    display: flex;
+.stats-off {
+    border: 1px solid #9CC8E7;
     color: #6FAFDC;
 }
 
+.stats-on {
+    border: 1px solid #CAE2F2;
+    background-color: #4195D5;
+    color: white;
+}
+
+#stats-button>div {
+    display: flex;
+}
+
 .stats-icon {
-    background-image: url('../img/bar-chart-2.svg');
     background-position: center;
     background-repeat: no-repeat;
     flex-basis: 35%;
     height: auto;
+}
+
+.stats-icon-off {
+    background-image: url('../img/bar-chart-2.svg');
+}
+
+.stats-icon-on {
+    background-image: url('../img/bar-chart-2-white.svg');
+}
+
+.stats-head {
+    display: flex;
+    width:30%;
+    height:auto;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 2em;
+}
+
+.stats-img {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    width: 80%;
+}
+
+.stats-data {
+    display: flex;
+}
+
+.stats-data p {
+    padding: 6px;
+    text-align: left;
+}
+
+.stats-bar {
+    flex: 1;
+    height: 1em;
+    background-color: #93C854;
+    border-radius: 100px;
+}
+
+.bar-div {
+    flex: 1;
+}
+
+.bar-column {
+    width: 100%;
+    padding: 6px;
+    justify-content: left;
+    outline: 1px solid blue;
+}
+
+.stats-column {
+    outline: 1px solid red;
+    display: flex;
+    padding: 6px;
+    flex-direction: column;
 }
 
 .content {
@@ -116,8 +191,16 @@ main {
 
 .content>p {
     font-size: 14px;
+    font-weight: 400;
     width: 80%;
     height: 20%;
+}
+
+.content h4 {
+    color: #133F5D;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'Odibee Sans'
 }
 
 .elements {
@@ -132,7 +215,7 @@ main {
     text-align: center;
     font-weight: lighter;
     color: white;
-    padding: 5px;
+    padding: 5px 10px;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -146,23 +229,19 @@ main {
 }
 
 .fire {
-    background-color: red;
+    background-color: #eb5b51;
 }
 
 .grass {
-    background-color: green;
+    background-color: #93C854;
 }
 
 .poison {
-    background-color: purple;
+    background-color: #B154C8;
 }
 
 .water {
-    background-color: blue;
-}
-
-.normal {
-    background-color: grey;
+    background-color: #5494c8;
 }
 
 figure {
@@ -171,7 +250,7 @@ figure {
     padding: 20px;
 }
 
-img {
+figure>img {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
