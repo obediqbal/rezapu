@@ -74,42 +74,65 @@ function makePokemonStats(pokemon) {
 
     statsHead.append(statsImg, statsName);
 
-    const statsData = document.createElement("div");
-    statsData.classList.add("stats-data");
+    // const statsData = document.createElement("div");
+    // statsData.classList.add("stats-data");
 
     let listData = [];
     listData.push(["HP", "ATK", "DEF", "Sp.ATK", "Sp.DEF", "SPD"]);
     listData.push(pokemon.stats);
-    //todo: bar
 
-    for (let i = 0; i < 2; i++) {
-        const column = document.createElement("div");
-        column.classList.add("stats-column");
-        for (data of listData[i]) {
-            const dataElement = document.createElement("p");
-            dataElement.innerText = data;
-            column.append(dataElement);
-        }
-        statsData.append(column);
+    const table = document.createElement("table")
+    table.classList.add("stats-table");
+    table.setAttribute("align","center");
+    for (let i =0;i<6;i++){
+        const trow = document.createElement("tr");
+        trow.classList.add("table-row")
+
+        const thead = document.createElement("th");
+        thead.innerText = listData[0][i];
+
+        const tstats = document.createElement("td");
+        tstats.innerText = listData[1][i]
+
+        const contbar = document.createElement("td");
+        const tbar = document.createElement("div");
+        tbar.classList.add("stats-bar");
+        const width = 2.5*listData[1][i];
+        tbar.style.setProperty("width",width+"px");
+        contbar.append(tbar);
+
+        trow.append(thead,tstats,contbar);
+        table.append(trow);
     }
 
-    const barColumn = document.createElement("div");
-    barColumn.classList.add("bar-column");
-    // barColumn.classList.add("stats-column");
-    for (data of listData[1]){
-        const div = document.createElement("div");
-        div.classList.add("bar-div");
-        const dataElement = document.createElement("div");
-        dataElement.classList.add("stats-bar");
-        const width = 2*data;
-        dataElement.style.setProperty("width",width+"px")
-        // dataElement.setAttribute("width",width+"px");
+    // for (let i = 0; i < 2; i++) {
+    //     const column = document.createElement("div");
+    //     column.classList.add("stats-column");
+    //     for (data of listData[i]) {
+    //         const dataElement = document.createElement("p");
+    //         dataElement.innerText = data;
+    //         column.append(dataElement);
+    //     }
+    //     statsData.append(column);
+    // }
 
-        div.append(dataElement);
-        barColumn.append(div);
-    } statsData.append(barColumn);
+    // const barColumn = document.createElement("div");
+    // barColumn.classList.add("bar-column");
+    // // barColumn.classList.add("stats-column");
+    // for (data of listData[1]){
+    //     const div = document.createElement("div");
+    //     div.classList.add("bar-div");
+    //     const dataElement = document.createElement("div");
+    //     dataElement.classList.add("stats-bar");
+    //     const width = 2*data;
+    //     dataElement.style.setProperty("width",width+"px")
+    //     // dataElement.setAttribute("width",width+"px");
 
-    return [statsHead,statsData];
+    //     div.append(dataElement);
+    //     barColumn.append(div);
+    // } statsData.append(barColumn);
+
+    return [statsHead,table];
 
 
 

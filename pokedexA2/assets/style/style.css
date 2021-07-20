@@ -146,38 +146,29 @@ span {
     width: 80%;
 }
 
-.stats-data {
-    display: flex;
+.stats-table {
+    padding: 10px;
+    width: auto;
+    height:auto;
+    border-spacing: 10px;
 }
 
-.stats-data p {
-    padding: 6px;
-    text-align: left;
+.stats-table td {
+    margin-left: 10px;
+    margin-right: 100px;
 }
 
 .stats-bar {
-    flex: 1;
-    height: 1em;
+    height: 12px;
     background-color: #93C854;
     border-radius: 100px;
 }
 
-.bar-div {
-    flex: 1;
-}
-
-.bar-column {
+.table-row {
     width: 100%;
     padding: 6px;
-    justify-content: left;
-    outline: 1px solid blue;
-}
-
-.stats-column {
-    outline: 1px solid red;
-    display: flex;
-    padding: 6px;
-    flex-direction: column;
+    text-align: left;
+    align-items: center;
 }
 
 .content {
