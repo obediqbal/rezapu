@@ -55,19 +55,19 @@ let k = 0;
 let n = banyakHari(bulanSekarang - 1) - prev;
 
 for (let i = 0; i < 6; i++) {
-    let baris = document.createElement("div");
+    let baris = document.createElement("tr");
     for (let j = 0; j < 7; j++) {
-        let div = document.createElement("div");
+        let td = document.createElement("td");
         let p = document.createElement("p");
         if (tanggal[k] < 10) p.innerText = "0" + tanggal[k];
         else p.innerText = tanggal[k];
         if (k < n || k > next + n - 1) {
-            p.setAttribute("class", "grey");
-        } else if (tanggal[k] == tanggalSekarang) p.setAttribute("class", "today");
-        else p.setAttribute("class", "bg");
+            p.classList.add("grey")
+        } else if (tanggal[k] == tanggalSekarang) p.classList.add("today");
+        else p.classList.add("bg")
 
-        div.appendChild(p)
-        baris.appendChild(div);
+        td.appendChild(p)
+        baris.appendChild(td);
         k++;
     }
     kalender.appendChild(baris);

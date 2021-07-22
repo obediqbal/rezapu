@@ -40,8 +40,8 @@
                 <div class="inner-container">
                     <div class="card margin">
                         <div class="heading">
-                            <div class="icons">
-                                <div class="my-pokemon-icon"></div>
+                            <div class="icon-container">
+                                <div class="my-pokemon-icon icon"></div>
                             </div>
                             <h3>My Pokemon</h3>
                             <span></span>
@@ -73,34 +73,39 @@
                 <div class="inner-container">
                     <div class="card margin">
                         <div class="heading">
+                            <div class="icon-container">
+                                <div class="tournaments-icon icon"></div>
+                            </div>
                             <h3>Tournaments</h3>
                             <span></span>
                         </div>
                         <div class="content" align="center">
-                            <div id="calendar">
-                                <div class="calendar-head">
-                                    <div>
-                                        <p>Su</p>
-                                    </div>
-                                    <div>
-                                        <p>Mo</p>
-                                    </div>
-                                    <div>
-                                        <p>Tu</p>
-                                    </div>
-                                    <div>
-                                        <p>We</p>
-                                    </div>
-                                    <div>
-                                        <p>Th</p>
-                                    </div>
-                                    <div>
-                                        <p>Fr</p>
-                                    </div>
-                                    <div>
-                                        <p>Sa</p>
-                                    </div>
-                                </div>
+                            <div class="calendar-outer">
+                                <table id="calendar">
+                                    <tr class="calendar-head">
+                                        <th>
+                                            <p>Su</p>
+                                        </th>
+                                        <th>
+                                            <p>Mo</p>
+                                        </th>
+                                        <th>
+                                            <p>Tu</p>
+                                        </th>
+                                        <th>
+                                            <p>We</p>
+                                        </th>
+                                        <th>
+                                            <p>Th</p>
+                                        </th>
+                                        <th>
+                                            <p>Fr</p>
+                                        <Stats/th>
+                                        <th>
+                                            <p>Sa</p>
+                                        </th>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -108,10 +113,13 @@
                 <div class="inner-container">
                     <div class="card margin">
                         <div class="heading">
+                            <div class="icon-container">
+                                <div class="item-icon icon"></div>
+                            </div>
                             <h3>Item Stock</h3>
                             <span></span>
                         </div>
-                        <div class="content" align="center">
+                        <div id="item-stock" class="content" align="center">
 
                         </div>
                     </div>

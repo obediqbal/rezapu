@@ -53,7 +53,8 @@ main {
     flex-direction: column;
     width: auto;
     height: 100%;
-    outline: 6px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    /* outline: 6px solid rgba(255, 255, 255, 0.4); */
     padding: 10px;
 }
 
@@ -63,21 +64,32 @@ main {
     align-items: center;
 }
 
-.icons {
-    flex-basis: 30px;
-    height: 100%;
+.icon-container {
+    width: auto;
+    height: auto;
     border: 1px solid #9CC8E7;
     border-radius: 5px;
     padding: 5px;
     background-color: #F7FBFD;
 }
 
-.my-pokemon-icon {
-    background-image: url('../img/Vector.svg'), url('../img/Vector-1.svg');
+.icon {
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+    width: 20px;
+    height: 20px;
+}
+
+.my-pokemon-icon {
+    background-image: url('../img/Vector.svg'), url('../img/Vector-1.svg');
+}
+
+.tournaments-icon {
+    background-image: url('../img/tournaments.svg');
+}
+
+.item-icon {
+    background-image: url('../img/item.svg');
 }
 
 .heading>h3 {
@@ -154,12 +166,11 @@ span {
 }
 
 .stats-table td {
-    margin-left: 10px;
-    margin-right: 100px;
+    padding: 0 5px;
 }
 
 .stats-bar {
-    height: 12px;
+    height: 10px;
     background-color: #93C854;
     border-radius: 100px;
 }
@@ -172,7 +183,8 @@ span {
 }
 
 .content {
-    padding: 10px;
+    /* padding: 10px; */
+    width: 100%;
     height: 100%;
 }
 
@@ -184,7 +196,7 @@ span {
     font-size: 14px;
     font-weight: 400;
     width: 80%;
-    height: 20%;
+    height: auto;
 }
 
 .content h4 {
@@ -262,7 +274,7 @@ p {
     display: flex;
     flex: 1;
     flex-direction: row;
-    min-height: 480px;
+    min-height: 450px;
     margin-bottom: 30px;
 }
 
@@ -274,7 +286,6 @@ p {
     flex-grow: 1;
     flex-basis: 100%;
     flex-shrink: 1;
-    outline: 1px solid red;
 }
 
 .double {
@@ -284,7 +295,7 @@ p {
 }
 
 .margin {
-    margin-right: 0;
+    margin-right: 30px;
 }
 
 .pokemon-nav {
@@ -315,26 +326,30 @@ p {
     background-color: #4195D5 !important;
 }
 
-#calendar {
+.calendar-outer {
     display: flex;
-    font-size: 12px;
     flex-direction: column;
+    width:90%;
 }
 
-#calendar>div {
+#calendar {
+    border-spacing: 10px;
+    font-size: 12px;
+}
+
+#calendar tr {
     display: flex;
-    flex: 1;
-    margin: 0.3em;
+    margin-bottom: 10px;
 }
 
-#calendar>div>div {
-    flex: 1;
+#calendar th, #calendar td {
+    flex:1;
 }
+
 
 #calendar p {
-    flex: 1;
-    padding: 0.7em;
     text-align: center;
+    padding: 10px 0;
     border-radius: 5px;
 }
 
@@ -351,10 +366,6 @@ p {
 .today {
     background-color: #4195D5;
     color: white;
-}
-
-.calendar-head {
-    font-weight: bolder;
 }
 
 input {

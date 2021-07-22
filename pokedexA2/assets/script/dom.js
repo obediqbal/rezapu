@@ -97,7 +97,7 @@ function makePokemonStats(pokemon) {
         const contbar = document.createElement("td");
         const tbar = document.createElement("div");
         tbar.classList.add("stats-bar");
-        const width = 2.5*listData[1][i];
+        const width = 2*listData[1][i];
         tbar.style.setProperty("width",width+"px");
         contbar.append(tbar);
 
@@ -179,9 +179,10 @@ function changeMyPokemon(index) {
 
 const headings = document.getElementsByClassName("heading");
 for (heading of headings) {
+    let temp = heading
     const span = heading.getElementsByTagName("span")[0];
     document.addEventListener("scroll", function () {
-        span.innerText = getSize(heading);
+        span.innerText = getSize(temp);
     })
 }
 
