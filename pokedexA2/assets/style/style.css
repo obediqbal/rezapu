@@ -282,7 +282,7 @@ p {
     display: flex;
     flex: 1;
     flex-direction: row;
-    min-height: 450px;
+    min-height: 470px;
     margin-bottom: 30px;
 }
 
