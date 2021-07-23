@@ -1,6 +1,11 @@
 pokemonList = []
 const myPokemon = document.getElementById("my-pokemon");
 
+const navButtons = document.getElementsByClassName("nav-button");
+
+const trainerProfileButton = document.getElementById("trainer-profile-button");
+const trainerProfileDetails = document.getElementById("trainer-profile-details");
+
 const statsButton = document.getElementById("stats-button");
 const statsP = statsButton.getElementsByTagName("p");
 const statsIcon = statsButton.getElementsByClassName("stats-icon")[0];
@@ -34,6 +39,31 @@ function defaultPokemon() {
     pokemonList.push(charmander, bulbasaur, squirtle);
 }
 defaultPokemon();
+
+currentButton=0;
+for(let i=0;i<3;i++){
+    navButtons[i].addEventListener("click",function(){
+        if(!navButtons[i].classList.contains("nav-button-on")){
+            navButtons[currentButton].classList.remove("nav-button-on");
+            currentButton=i;
+            navButtons[i].classList.add("nav-button-on");
+        }
+    });
+}
+
+trainerProfileButton.addEventListener("click", function () {
+    if (trainerProfileButton.classList.contains("button-trainer-off")) {
+        trainerProfileButton.classList.remove("button-trainer-off");
+        trainerProfileButton.classList.add("button-trainer-on");
+
+        trainerProfileDetails.classList.remove("hide");
+    } else {
+        trainerProfileButton.classList.remove("button-trainer-on");
+        trainerProfileButton.classList.add("button-trainer-off");
+
+        trainerProfileDetails.classList.add("hide");
+    }
+});
 
 function makePokemonDesc(pokemon) {
     const figure = document.createElement("figure");
@@ -83,8 +113,8 @@ function makePokemonStats(pokemon) {
 
     const table = document.createElement("table")
     table.classList.add("stats-table");
-    table.setAttribute("align","center");
-    for (let i =0;i<6;i++){
+    table.setAttribute("align", "center");
+    for (let i = 0; i < 6; i++) {
         const trow = document.createElement("tr");
         trow.classList.add("table-row")
 
@@ -97,11 +127,11 @@ function makePokemonStats(pokemon) {
         const contbar = document.createElement("td");
         const tbar = document.createElement("div");
         tbar.classList.add("stats-bar");
-        const width = 2*listData[1][i];
-        tbar.style.setProperty("width",width+"px");
+        const width = 2 * listData[1][i];
+        tbar.style.setProperty("width", width + "px");
         contbar.append(tbar);
 
-        trow.append(thead,tstats,contbar);
+        trow.append(thead, tstats, contbar);
         table.append(trow);
     }
 
@@ -132,7 +162,7 @@ function makePokemonStats(pokemon) {
     //     barColumn.append(div);
     // } statsData.append(barColumn);
 
-    return [statsHead,table];
+    return [statsHead, table];
 
 
 

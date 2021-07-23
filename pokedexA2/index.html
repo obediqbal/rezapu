@@ -10,28 +10,43 @@
     <header>
         <h1 align="center">PokeMonitor</h1>
         <nav>
-            <div>
-                <h2>Dashboard</h2>
+            <div class="nav-button nav-button-on">
+                <div class="nav-inner">
+                    <div class="nav-dashboard-icon-on nav-icon"></div>
+                    <h2>Dashboard</h2>
+                </div>
             </div>
-            <div>
-                <h2>Store</h2>
+            <div class="nav-button">
+                <div class="nav-inner">
+                    <div class="nav-store-icon-off nav-icon"></div>
+                    <h2>Store</h2>
+                </div>
             </div>
-            <div>
-                <h2>Profile</h2>
+            <div class="nav-button">
+                <div class="nav-inner">
+                    <div class="nav-profile-icon-off nav-icon"></div>
+                    <h2>Profile</h2>
+                </div>
             </div>
         </nav>
     </header>
     <main>
-        <aside class="outer-container" style="min-height:auto">
-            <div class="inner-container" style="flex-basis: 80%">
-                <div class="card margin">
-                    <input type="text" id="searchBar" name="searchBar"
-                        placeholder="Search for pokemons, items, friends, dragon ball...">
+        <aside>
+            <div class="outer-container">
+                <div class="inner-container" style="flex: 0;flex-basis: 20%;margin-left:auto;cursor: pointer;">
+                    <div id="trainer-profile-button" class="card margin card-low-padding button-trainer-off">
+                        <div class="trainer-profile">
+                            <h4>Rezapu</h4>
+                            <img src="assets/img/profile.svg">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="inner-container" style="flex-basis: 20%">
-                <div class="card margin">
-                    <h4>Rezapu</h4>
+            <div class="outer-container">
+                <div class="inner-container">
+                    <div id="trainer-profile-details" class="card margin hide">
+
+                    </div>
                 </div>
             </div>
         </aside>
@@ -100,9 +115,8 @@
                                         </th>
                                         <th>
                                             <p>Fr</p>
-                                        <Stats/th>
-                                        <th>
-                                            <p>Sa</p>
+                                            <Stats/th> <th>
+                                                <p>Sa</p>
                                         </th>
                                     </tr>
                                 </table>
@@ -156,11 +170,12 @@
                                 <a href="https://pokemongolive.com/post/pokemongofest2021-ultraunlock-time-space/">
                                     <div class="event-outer-img">
                                         <img src="assets/img/pokemongo-5th-anniversary.jpg" class="event-img"></img>
-                                    </div>    
+                                    </div>
                                 </a>
                                 <div class="event-details">
                                     <a href="https://pokemongolive.com/post/pokemongofest2021-ultraunlock-time-space/">
-                                        <div class="event-head">Prepare for Ultra Unlock Part 1: Time and Ultra Unlock Part 2: Space!</div>
+                                        <div class="event-head">Prepare for Ultra Unlock Part 1: Time and Ultra Unlock
+                                            Part 2: Space!</div>
                                     </a>
                                     <div class="event-date">July 21, 2021</div>
                                 </div>

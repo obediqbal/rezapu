@@ -54,6 +54,8 @@ let kalender = document.getElementById(CALENDAR_ID);
 let k = 0;
 let n = banyakHari(bulanSekarang - 1) - prev;
 
+let listEvent = [5, 19, 29];
+
 for (let i = 0; i < 6; i++) {
     let baris = document.createElement("tr");
     for (let j = 0; j < 7; j++) {
@@ -61,8 +63,12 @@ for (let i = 0; i < 6; i++) {
         let p = document.createElement("p");
         if (tanggal[k] < 10) p.innerText = "0" + tanggal[k];
         else p.innerText = tanggal[k];
+        if (listEvent.includes(tanggal[k])) {
+            p.classList.add("day-ofevent");
+        }
         if (k < n || k > next + n - 1) {
             p.classList.add("grey")
+            p.classList.remove("day-ofevent");
         } else if (tanggal[k] == tanggalSekarang) p.classList.add("today");
         else p.classList.add("bg")
 

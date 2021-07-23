@@ -36,6 +36,96 @@ nav>div {
     margin-bottom: 10px;
 }
 
+.nav-button {
+    font-size: smaller;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    padding: 10px;
+    height: 100%!important;
+    border-radius: 10px;
+}
+
+.nav-button-on {
+    background-color: #F7FBFD;
+    color: #4195D5;
+}
+
+.nav-inner {
+    display: flex;
+}
+
+.nav-icon {
+    background-position: center;
+    padding: 15px;
+    background-size: contain;
+    background-repeat: no-repeat !important;
+    width: 100%;
+    height: auto !important;
+}
+
+.nav-dashboard-icon-off {
+    background: url('../img/dashboard-nav-off.svg');
+}
+
+.nav-dashboard-icon-on {
+    background: url('../img/dashboard-nav-on.svg');
+}
+
+.nav-store-icon-off {
+    background: url('../img/store-nav-off.svg');
+}
+
+.nav-store-icon-on {
+    background: url('../img/store-nav-on.svg');
+}
+
+.nav-profile-icon-off {
+    background: url('../img/profile-nav-off.svg');
+}
+
+.nav-profile-icon-on {
+    background: url('../img/profile-nav-on.svg');
+}
+
+aside {
+    margin-bottom: 30px;
+}
+
+aside>div {
+    min-height: auto !important;
+}
+
+#trainer-profile-button {
+    cursor: pointer;
+}
+
+.button-trainer-on {
+    background-color: #4195D5 !important;
+    color: white;
+}
+
+.button-trainer-off {
+    background-color: white !important;
+    color: #4195D5;
+}
+
+.hide {
+    display: none !important;
+}
+
+.trainer-profile {
+    display: flex;
+    align-items: center;
+}
+
+.trainer-profile h4 {
+    padding: 10px 20px 10px 10px;
+    font-size: 18px;
+}
+
 main {
     width: 85%;
     height: 100%;
@@ -54,8 +144,11 @@ main {
     width: auto;
     height: 100%;
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
-    /* outline: 6px solid rgba(255, 255, 255, 0.4); */
     padding: 20px 15px;
+}
+
+.card-low-padding {
+    padding: 10px 5px;
 }
 
 .heading {
@@ -377,10 +470,8 @@ p {
     color: white;
 }
 
-input {
-    width: 100%;
-    height: 120%;
-    border: 0;
+.day-ofevent {
+    border: 2px solid #4195D5;
 }
 
 .map-container {
@@ -409,7 +500,7 @@ input {
     flex: 1;
     display: flex;
     flex-direction: column;
-    border-bottom:1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .announcement:last-child {
@@ -453,7 +544,7 @@ a {
 
 .event-head {
     text-align: left;
-    font-weight:600;
+    font-weight: 600;
 }
 
 .event-date {
