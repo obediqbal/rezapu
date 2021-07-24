@@ -216,6 +216,8 @@ function makePokemonStats(pokemon) {
 }
 
 function makePokemonNav(index) {
+    const pokemonNavOuter = document.createElement("div");
+    pokemonNavOuter.classList.add("pokemon-nav-outer")
     const pokemonNav = document.createElement("div");
     pokemonNav.classList.add("pokemon-nav");
     const pokemonLen = pokemonList.length;
@@ -230,7 +232,8 @@ function makePokemonNav(index) {
         }
         pokemonNav.append(button);
     }
-    return pokemonNav;
+    pokemonNavOuter.append(pokemonNav);
+    return pokemonNavOuter;
 }
 
 changeMyPokemon(0);
