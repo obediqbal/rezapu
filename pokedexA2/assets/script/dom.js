@@ -40,15 +40,49 @@ function defaultPokemon() {
 }
 defaultPokemon();
 
-currentButton=0;
+let currentButton=0;
+const navIcons = document.getElementsByClassName("nav-icon");
+
+function resetNavButton(){
+    for (let i=0;i<3;i++){
+        navIcons[i].classList.remove("nav-dashboard-icon-on");
+        navIcons[i].classList.remove("nav-store-icon-on");
+        navIcons[i].classList.remove("nav-profile-icon-on");
+        navButtons[i].classList.remove("nav-button-on");
+    }
+    for(let i =0 ;i<3;i++){
+        if(i==0) {
+            navIcons[i].classList.add("nav-dashboard-icon-off");
+        }else if(i==1){
+            navIcons[i].classList.add("nav-store-icon-off");
+        }else {
+            navIcons[i].classList.add("nav-profile-icon-off");
+        }
+    }
+}
+
+function switchNavButton(i){
+    resetNavButton();
+    if(i==0) {
+        navIcons[i].classList.remove("nav-dashboard-icon-off");
+        navIcons[i].classList.add("nav-dashboard-icon-on");
+    }else if(i==1){
+        navIcons[i].classList.remove("nav-store-icon-off");
+        navIcons[i].classList.add("nav-store-icon-on");
+    }else {
+        navIcons[i].classList.remove("nav-profile-icon-off");
+        navIcons[i].classList.add("nav-profile-icon-on");
+    }
+}
+
 for(let i=0;i<3;i++){
     navButtons[i].addEventListener("click",function(){
         if(!navButtons[i].classList.contains("nav-button-on")){
-            navButtons[currentButton].classList.remove("nav-button-on");
-            currentButton=i;
+            switchNavButton(i);
             navButtons[i].classList.add("nav-button-on");
         }
     });
+    currentButton=i;
 }
 
 trainerProfileButton.addEventListener("click", function () {
