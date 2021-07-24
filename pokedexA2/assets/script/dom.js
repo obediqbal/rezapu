@@ -6,6 +6,9 @@ const navButtons = document.getElementsByClassName("nav-button");
 const trainerProfilePreview = document.getElementById("trainer-profile-preview");
 const trainerProfileDetails = document.getElementById("trainer-profile-details");
 
+const dashboard = document.getElementById("dashboard");
+const store = document.getElementById("store");
+
 const statsButton = document.getElementById("stats-button");
 const statsP = statsButton.getElementsByTagName("p");
 const statsIcon = statsButton.getElementsByClassName("stats-icon")[0];
@@ -51,12 +54,15 @@ function switchOffNavButton(i) {
     if (i == 0) {
         navIcons[i].classList.remove("nav-dashboard-icon-on");
         navIcons[i].classList.add("nav-dashboard-icon-off");
+        dashboard.classList.add("hide");
     } else if (i == 1) {
         navIcons[i].classList.remove("nav-store-icon-on");
         navIcons[i].classList.add("nav-store-icon-off");
+        store.classList.add("hide");
     } else {
         navIcons[i].classList.remove("nav-profile-icon-on");
         navIcons[i].classList.add("nav-profile-icon-off");
+        trainerProfileDetails.classList.add("hide");
     }
     navButtons[i].classList.remove("nav-button-on")
 }
@@ -65,12 +71,15 @@ function switchOnNavButton(i) {
     if (i == 0) {
         navIcons[i].classList.remove("nav-dashboard-icon-off");
         navIcons[i].classList.add("nav-dashboard-icon-on");
+        dashboard.classList.remove("hide");
     } else if (i == 1) {
         navIcons[i].classList.remove("nav-store-icon-off");
         navIcons[i].classList.add("nav-store-icon-on");
+        store.classList.remove("hide");
     } else {
         navIcons[i].classList.remove("nav-profile-icon-off");
         navIcons[i].classList.add("nav-profile-icon-on");
+        trainerProfileDetails.classList.remove("hide");
     }
     navButtons[i].classList.add("nav-button-on")
 }
@@ -81,15 +90,11 @@ function toggleProfile() {
 
         trainerProfilePreview.classList.remove("button-trainer-off");
         trainerProfilePreview.classList.add("button-trainer-on");
-
-        trainerProfileDetails.classList.remove("hide");
     } else {
         switchOffNavButton(2);
 
         trainerProfilePreview.classList.remove("button-trainer-on");
         trainerProfilePreview.classList.add("button-trainer-off");
-
-        trainerProfileDetails.classList.add("hide");
     }
 }
 
