@@ -98,10 +98,6 @@ aside>div {
     min-height: auto !important;
 }
 
-#trainer-profile-button {
-    cursor: pointer;
-}
-
 .button-trainer-on {
     background-color: #4195D5 !important;
     color: white;

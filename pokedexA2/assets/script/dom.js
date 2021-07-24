@@ -3,7 +3,7 @@ const myPokemon = document.getElementById("my-pokemon");
 
 const navButtons = document.getElementsByClassName("nav-button");
 
-const trainerProfileButton = document.getElementById("trainer-profile-button");
+const trainerProfilePreview = document.getElementById("trainer-profile-preview");
 const trainerProfileDetails = document.getElementById("trainer-profile-details");
 
 const statsButton = document.getElementById("stats-button");
@@ -40,64 +40,72 @@ function defaultPokemon() {
 }
 defaultPokemon();
 
-let currentButton=0;
 const navIcons = document.getElementsByClassName("nav-icon");
 
-function resetNavButton(){
-    for (let i=0;i<3;i++){
-        navIcons[i].classList.remove("nav-dashboard-icon-on");
-        navIcons[i].classList.remove("nav-store-icon-on");
-        navIcons[i].classList.remove("nav-profile-icon-on");
-        navButtons[i].classList.remove("nav-button-on");
-    }
-    for(let i =0 ;i<3;i++){
-        if(i==0) {
-            navIcons[i].classList.add("nav-dashboard-icon-off");
-        }else if(i==1){
-            navIcons[i].classList.add("nav-store-icon-off");
-        }else {
-            navIcons[i].classList.add("nav-profile-icon-off");
-        }
-    }
+function resetNavButton() {
+    switchOffNavButton(0);
+    switchOffNavButton(1);
 }
 
-function switchNavButton(i){
-    resetNavButton();
-    if(i==0) {
+function switchOffNavButton(i) {
+    if (i == 0) {
+        navIcons[i].classList.remove("nav-dashboard-icon-on");
+        navIcons[i].classList.add("nav-dashboard-icon-off");
+    } else if (i == 1) {
+        navIcons[i].classList.remove("nav-store-icon-on");
+        navIcons[i].classList.add("nav-store-icon-off");
+    } else {
+        navIcons[i].classList.remove("nav-profile-icon-on");
+        navIcons[i].classList.add("nav-profile-icon-off");
+    }
+    navButtons[i].classList.remove("nav-button-on")
+}
+
+function switchOnNavButton(i) {
+    if (i == 0) {
         navIcons[i].classList.remove("nav-dashboard-icon-off");
         navIcons[i].classList.add("nav-dashboard-icon-on");
-    }else if(i==1){
+    } else if (i == 1) {
         navIcons[i].classList.remove("nav-store-icon-off");
         navIcons[i].classList.add("nav-store-icon-on");
-    }else {
+    } else {
         navIcons[i].classList.remove("nav-profile-icon-off");
         navIcons[i].classList.add("nav-profile-icon-on");
     }
+    navButtons[i].classList.add("nav-button-on")
 }
 
-for(let i=0;i<3;i++){
-    navButtons[i].addEventListener("click",function(){
-        if(!navButtons[i].classList.contains("nav-button-on")){
-            switchNavButton(i);
-            navButtons[i].classList.add("nav-button-on");
-        }
-    });
-    currentButton=i;
-}
+function toggleProfile() {
+    if (trainerProfilePreview.classList.contains("button-trainer-off")) {
+        switchOnNavButton(2);
 
-trainerProfileButton.addEventListener("click", function () {
-    if (trainerProfileButton.classList.contains("button-trainer-off")) {
-        trainerProfileButton.classList.remove("button-trainer-off");
-        trainerProfileButton.classList.add("button-trainer-on");
+        trainerProfilePreview.classList.remove("button-trainer-off");
+        trainerProfilePreview.classList.add("button-trainer-on");
 
         trainerProfileDetails.classList.remove("hide");
     } else {
-        trainerProfileButton.classList.remove("button-trainer-on");
-        trainerProfileButton.classList.add("button-trainer-off");
+        switchOffNavButton(2);
+
+        trainerProfilePreview.classList.remove("button-trainer-on");
+        trainerProfilePreview.classList.add("button-trainer-off");
 
         trainerProfileDetails.classList.add("hide");
     }
+}
+
+for (let i = 0; i < 2; i++) {
+    navButtons[i].addEventListener("click", function () {
+        if (!navButtons[i].classList.contains("nav-button-on")) {
+            resetNavButton();
+            switchOnNavButton(i)
+        }
+    });
+}
+
+navButtons[2].addEventListener("click", function () {
+    toggleProfile()
 });
+
 
 function makePokemonDesc(pokemon) {
     const figure = document.createElement("figure");
