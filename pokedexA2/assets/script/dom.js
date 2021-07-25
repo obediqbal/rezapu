@@ -1,4 +1,3 @@
-pokemonList = []
 const myPokemon = document.getElementById("my-pokemon");
 const pokemonNav = document.getElementById("pokemon-nav")
 
@@ -14,42 +13,35 @@ const statsButton = document.getElementById("stats-button");
 const statsP = statsButton.getElementsByTagName("p");
 const statsIcon = statsButton.getElementsByClassName("stats-icon")[0];
 
-class Pokemon {
-    constructor(pokemonName, imgsrc, desc, types, stats) {
-        this.pokemonName = pokemonName;
-        this.imgsrc = imgsrc;
-        this.desc = desc;
-        this.types = types;
-        this.stats = stats;
-    }
+function trainerProfileGenerator(trainer){
+    const trainerPicture = document.getElementById("trainer-picture");
+    const trainerPicturePreview = document.getElementById("trainer-picture-preview");
+    const trainerUsername = document.getElementById("trainer-username");
+    const trainerName = document.getElementById("trainer-name");
+    const trainerRank = document.getElementById("trainer-rank");
+    const trainerEmail = document.getElementById("trainer-email");
+    const trainerBalance = document.getElementById("trainer-balance");
+    const trainerPokemonTotal = document.getElementById("trainer-pokemon-total");
+
+    trainerPicture.setAttribute("src",trainer.imgProfile);
+    trainerPicturePreview.setAttribute("src",trainer.imgProfile);
+
+    trainerUsername.innerText = trainer.username;
+    trainerName.innerText = trainer.trainerName;
+    trainerRank.innerText = trainer.rank;
+    trainerEmail.innerText = trainer.email;
+    trainerBalance.innerText = trainer.balance;
+    trainerPokemonTotal.innerText = trainer.pokemonList.length+" Pokemon";
 }
 
-function defaultPokemon() {
-    const charmander = new Pokemon("Charmander",
-        "assets/img/charmander.png",
-        "Charmander is a bipedal, reptilian Pokemon with a primarily orange body and blue eyes.",
-        ["Fire"],
-        [39, 52, 43, 60, 50, 65]);
-    const bulbasaur = new Pokemon("Bulbasaur",
-        "assets/img/bulbasaur.png",
-        "There is a plant seed on its back right from the day this Pokemon is born. The seed slowly grows larger.",
-        ["Grass", "Poison"],
-        [45, 49, 49, 65, 65, 45]);
-    const squirtle = new Pokemon("Squirtle",
-        "assets/img/squirtle.png",
-        "Squirtle is a small Pokemon that resembles a light-blue turtle.  It has large, purplish or reddish eyes.",
-        ["Water"],
-        [44, 48, 65, 50, 64, 43]);
-    pokemonList.push(charmander, bulbasaur, squirtle);
-}
-defaultPokemon();
-
-const navIcons = document.getElementsByClassName("nav-icon");
+trainerProfileGenerator(defaultTrainer)
 
 function resetNavButton() {
     switchOffNavButton(0);
     switchOffNavButton(1);
 }
+
+const navIcons = document.getElementsByClassName("nav-icon");
 
 function switchOffNavButton(i) {
     if (i == 0) {
@@ -183,50 +175,20 @@ function makePokemonStats(pokemon) {
         table.append(trow);
     }
 
-    // for (let i = 0; i < 2; i++) {
-    //     const column = document.createElement("div");
-    //     column.classList.add("stats-column");
-    //     for (data of listData[i]) {
-    //         const dataElement = document.createElement("p");
-    //         dataElement.innerText = data;
-    //         column.append(dataElement);
-    //     }
-    //     statsData.append(column);
-    // }
-
-    // const barColumn = document.createElement("div");
-    // barColumn.classList.add("bar-column");
-    // // barColumn.classList.add("stats-column");
-    // for (data of listData[1]){
-    //     const div = document.createElement("div");
-    //     div.classList.add("bar-div");
-    //     const dataElement = document.createElement("div");
-    //     dataElement.classList.add("stats-bar");
-    //     const width = 2*data;
-    //     dataElement.style.setProperty("width",width+"px")
-    //     // dataElement.setAttribute("width",width+"px");
-
-    //     div.append(dataElement);
-    //     barColumn.append(div);
-    // } statsData.append(barColumn);
-
     return [statsHead, table];
-
-
-
 }
 
-function makePokemonNav(index) {
+function makePokemonNav(index, trainer) {
     const pokemonNav = document.createElement("div");
     pokemonNav.classList.add("pokemon-nav");
-    const pokemonLen = pokemonList.length;
+    const pokemonLen = trainer.pokemonList.length;
     for (let i = 0; i < pokemonLen; i++) {
         const button = document.createElement("div");
         if (i == index) {
             button.classList.add("active-pokemon");
         } else {
             button.addEventListener("click", () => {
-                changeMyPokemon(i);
+                changeMyPokemon(i, trainer);
             })
         }
         pokemonNav.append(button);
@@ -234,11 +196,11 @@ function makePokemonNav(index) {
     return pokemonNav;
 }
 
-changeMyPokemon(0);
+changeMyPokemon(0, defaultTrainer);
 
-function insertPokemonToMyPokemon(index) {
+function insertPokemonToMyPokemon(index, trainer) {
     let res = []
-    const pokemon = pokemonList[index];
+    const pokemon = trainer.pokemonList[index];
     if (statsButton.classList.contains("stats-off")) {
         res = makePokemonDesc(pokemon);
     } else {
@@ -247,13 +209,13 @@ function insertPokemonToMyPokemon(index) {
     for (i of res) {
         myPokemon.append(i)
     }
-    pokemonNav.append(makePokemonNav(index));
+    pokemonNav.append(makePokemonNav(index, trainer));
 }
 
-function changeMyPokemon(index) {
+function changeMyPokemon(index, trainer) {
     myPokemon.innerHTML = "";
     pokemonNav.innerHTML = "";
-    insertPokemonToMyPokemon(index);
+    insertPokemonToMyPokemon(index, trainer);
 }
 
 const headings = document.getElementsByClassName("heading");
@@ -292,5 +254,5 @@ statsButton.addEventListener("click", function () {
         }
         j++;
     }
-    changeMyPokemon(index)
+    changeMyPokemon(index, defaultTrainer)
 })

@@ -36,8 +36,8 @@
                 <div class="inner-container" style="flex: 0;flex-basis: 20%;margin-left:auto">
                     <div id="trainer-profile-preview" class="card margin card-low-padding button-trainer-off">
                         <div class="trainer-profile">
-                            <h4>Rezapu</h4>
-                            <img class="profile-preview-img" src="assets/img/profile.jpg">
+                            <h4 id="trainer-username"></h4>
+                            <img id="trainer-picture-preview" class="profile-preview-img">
                         </div>
                     </div>
                 </div>
@@ -46,21 +46,21 @@
                 <div class="inner-container">
                     <div id="trainer-profile-details" class="card margin hide">
                         <div class="trainer-profile-left">
-                            <img class="trainer-profile-img" src="assets/img/profile.jpg">
+                            <img id="trainer-picture" class="trainer-profile-img">
                             <div class="trainer-profile-id">
-                                <h3>Reza Pahlevi Ubaidillah</h3>
-                                <p>Rookie Pokemon Trainer</p>
-                                <p style="color:#4195D5">obed.ubaidillah@gmail.com</p>
+                                <h3 id="trainer-name"></h3>
+                                <p id="trainer-rank"></p>
+                                <p id="trainer-email" style="color:#4195D5"></p>
                             </div>
                         </div>
                         <div class="trainer-profile-right">
                             <div>
                                 <p>Pocket</p>
-                                <p style="font-weight: 700">Rp500.000,00</p>
+                                <p id="trainer-balance" style="font-weight: 700"></p>
                             </div>
                             <div>
                                 <p>Owned</p>
-                                <p style="font-weight: 700">10 Pokemon</p>
+                                <p id="trainer-pokemon-total" style="font-weight: 700"></p>
                             </div>
                         </div>
                     </div>
@@ -222,6 +222,7 @@
             </article>
         </div>
     </main>
+    <script src="assets//script/data.js"></script>
     <script src="assets/script/calendar.js"></script>
     <script src="assets/script/dom.js"></script>
 </body>
