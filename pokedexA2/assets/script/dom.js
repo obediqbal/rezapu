@@ -1,5 +1,6 @@
 pokemonList = []
 const myPokemon = document.getElementById("my-pokemon");
+const pokemonNav = document.getElementById("pokemon-nav")
 
 const navButtons = document.getElementsByClassName("nav-button");
 
@@ -216,8 +217,6 @@ function makePokemonStats(pokemon) {
 }
 
 function makePokemonNav(index) {
-    const pokemonNavOuter = document.createElement("div");
-    pokemonNavOuter.classList.add("pokemon-nav-outer")
     const pokemonNav = document.createElement("div");
     pokemonNav.classList.add("pokemon-nav");
     const pokemonLen = pokemonList.length;
@@ -232,8 +231,7 @@ function makePokemonNav(index) {
         }
         pokemonNav.append(button);
     }
-    pokemonNavOuter.append(pokemonNav);
-    return pokemonNavOuter;
+    return pokemonNav;
 }
 
 changeMyPokemon(0);
@@ -246,14 +244,15 @@ function insertPokemonToMyPokemon(index) {
     } else {
         res = makePokemonStats(pokemon);
     }
-    res.push(makePokemonNav(index));
     for (i of res) {
         myPokemon.append(i)
     }
+    pokemonNav.append(makePokemonNav(index));
 }
 
 function changeMyPokemon(index) {
     myPokemon.innerHTML = "";
+    pokemonNav.innerHTML = "";
     insertPokemonToMyPokemon(index);
 }
 
@@ -283,7 +282,7 @@ function toggleStatsButton() {
 
 statsButton.addEventListener("click", function () {
     toggleStatsButton();
-    const pokemonNav = myPokemon.getElementsByClassName("pokemon-nav")[0].children;
+    const pokemonNav = document.getElementsByClassName("pokemon-nav")[0].children;
     let index = -1;
     let j = 0
     for (i of pokemonNav) {

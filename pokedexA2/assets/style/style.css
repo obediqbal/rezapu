@@ -196,9 +196,9 @@ main {
 }
 
 .card {
-    align-items: center;
     background-color: white;
     border-radius: 10px;
+    align-items: center;
     display: flex;
     flex-direction: column;
     width: auto;
@@ -344,7 +344,10 @@ span {
 }
 
 .content {
-    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
@@ -460,18 +463,20 @@ p {
 }
 
 .pokemon-nav-outer {
-
-    outline: 1px solid red;
-    flex: 1;
     height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .pokemon-nav {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .pokemon-nav>div {
+    flex: 1;
     cursor: pointer;
     border-radius: 15px;
     padding: 5px;
