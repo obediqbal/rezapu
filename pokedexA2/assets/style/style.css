@@ -67,27 +67,27 @@ nav>div {
 }
 
 .nav-dashboard-icon-off {
-    background: url('../img/dashboard-nav-off.svg');
+    background: url('../img/icons/dashboard-nav-off.svg');
 }
 
 .nav-dashboard-icon-on {
-    background: url('../img/dashboard-nav-on.svg');
+    background: url('../img/icons/dashboard-nav-on.svg');
 }
 
 .nav-store-icon-off {
-    background: url('../img/store-nav-off.svg');
+    background: url('../img/icons/store-nav-off.svg');
 }
 
 .nav-store-icon-on {
-    background: url('../img/store-nav-on.svg');
+    background: url('../img/icons/store-nav-on.svg');
 }
 
 .nav-profile-icon-off {
-    background: url('../img/profile-nav-off.svg');
+    background: url('../img/icons/profile-nav-off.svg');
 }
 
 .nav-profile-icon-on {
-    background: url('../img/profile-nav-on.svg');
+    background: url('../img/icons/profile-nav-on.svg');
 }
 
 aside {
@@ -234,23 +234,23 @@ main {
 }
 
 .my-pokemon-icon {
-    background-image: url('../img/Vector.svg'), url('../img/Vector-1.svg');
+    background-image: url('../img/icons/Vector.svg'), url('../img/icons/Vector-1.svg');
 }
 
 .tournaments-icon {
-    background-image: url('../img/tournaments.svg');
+    background-image: url('../img/icons/tournaments.svg');
 }
 
 .item-icon {
-    background-image: url('../img/item.svg');
+    background-image: url('../img/icons/item.svg');
 }
 
 .region-icon {
-    background-image: url('../img/map-pin.svg');
+    background-image: url('../img/icons/map-pin.svg');
 }
 
 .announcements-icon {
-    background-image: url('../img/announcements.svg');
+    background-image: url('../img/icons/announcements.svg');
 }
 
 .heading>h4 {
@@ -295,11 +295,11 @@ span {
 }
 
 .stats-icon-off {
-    background-image: url('../img/bar-chart-2.svg');
+    background-image: url('../img/icons/bar-chart-2.svg');
 }
 
 .stats-icon-on {
-    background-image: url('../img/bar-chart-2-white.svg');
+    background-image: url('../img/icons/bar-chart-2-white.svg');
 }
 
 .stats-head {
