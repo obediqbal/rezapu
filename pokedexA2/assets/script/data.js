@@ -22,11 +22,11 @@ class Pokemon {
 }
 
 class Item {
-    constructor(name, imgsrc, price, type){
+    constructor(name, imgsrc, price, desc) {
         this.name = name;
         this.imgsrc = imgsrc;
         this.price = price;
-        this.type = type;
+        this.desc = desc;
     }
 }
 
@@ -51,15 +51,98 @@ function defaultPokemon() {
     return pokemonList
 }
 
-function defaultItems() {
+function generateItem() {
     let itemList = new Object();
 
     itemList = {
-        "pokeball" : new Item("Poke ball",
-                            "assets/img/pokeball.png",
-                            5000,
-                            "pokeballs")
+        pokeballs: {
+            pokeball: {
+                item: new Item("Poke ball",
+                    "assets/img/items/pokeball.png",
+                    5000,
+                    "Used to Catch Wild Pokemon"),
+                amount: 0
+            },
+            greatball: {
+                item: new Item("Great ball",
+                    "assets/img/items/greatball.png",
+                    10000,
+                    "Used to Catch Wild Pokemon with a Greater Chance of Success."),
+                amount: 0
+            },
+            ultraball: {
+                item: new Item("Ultra ball",
+                    "assets/img/items/ultraball.png",
+                    50000,
+                    "Used to Catch Wild Pokemon with the Highest Chance of Success."),
+                amount: 0
+            },
+            masterball: {
+                item: new Item("Master ball",
+                    "assets/img/items/masterball.png",
+                    0,
+                    "Used to Catch Wild Pokemon with 100% Chance of Success."),
+                amount: 0
+            }
+        },
+        potions: {
+            potion: {
+                item: new Item("Potion",
+                    "assets/img/items/potion.png",
+                    7500,
+                    "Heals Pokemon For 20 HP"),
+                amount: 0
+            },
+            superpotion: {
+                item: new Item("Super Potion",
+                    "assets/img/items/superpotion.png",
+                    15000,
+                    "Heals Pokemon For 50 HP"),
+                amount: 0
+            },
+            hyperpotion: {
+                item: new Item("Hyper Potion",
+                    "assets/img/items/hyperpotion.png",
+                    20000,
+                    "Heals Pokemon For 200 HP"),
+                amount: 0
+            },
+            maxpotion: {
+                item: new Item("Max Potion",
+                    "assets/img/items/maxpotion.png",
+                    50000,
+                    "Heals Pokemon For Full HP"),
+                amount: 0
+            }
+        },
+        revives: {
+            revive: {
+                item: new Item("Revive",
+                    "assets/img/items/revive.png",
+                    20000,
+                    "Revives Pokemon with Half HP"),
+                amount: 0
+            },
+            maxrevive: {
+                item: new Item("Max Revive",
+                    "assets/img/items/maxrevive.png",
+                    40000,
+                    "Revives Pokemon with Full HP"),
+                amount: 0
+            }
+        }
     }
+    return itemList;
+}
+
+function defaultItems() {
+    let itemList = generateItem();
+
+    itemList.pokeballs.pokeball.amount = 10;
+    itemList.pokeballs.greatball.amount = 5;
+    itemList.pokeballs.ultraball.amount = 7;
+    itemList.pokeballs.masterball.amount = 1;
+    itemList.potions.potion.amount = 4;
 
     return itemList;
 }
@@ -69,7 +152,7 @@ const defaultTrainer = new Trainer("Rezapu",
     "assets/img/trainer/profile.jpg",
     "Rookie Pokemon Trainer",
     "obed.ubaidillah@gmail.com",
-    "Rp500.000,00",
+    500000,
     defaultPokemon(),
     defaultItems()
 );

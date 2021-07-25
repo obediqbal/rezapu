@@ -462,14 +462,16 @@ p {
     margin-right: 30px;
 }
 
-.pokemon-nav-outer {
+#my-pokemon-bottom {
     height: 100%;
     display:flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .pokemon-nav {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;

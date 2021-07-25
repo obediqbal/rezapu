@@ -1,5 +1,5 @@
 const myPokemon = document.getElementById("my-pokemon");
-const pokemonNav = document.getElementById("pokemon-nav")
+const myPokemonBottom = document.getElementById("my-pokemon-bottom")
 
 const navButtons = document.getElementsByClassName("nav-button");
 
@@ -13,7 +13,24 @@ const statsButton = document.getElementById("stats-button");
 const statsP = statsButton.getElementsByTagName("p");
 const statsIcon = statsButton.getElementsByClassName("stats-icon")[0];
 
-function trainerProfileGenerator(trainer){
+function currency(num) {
+    let s = "";
+    while (parseInt(num)>0) {
+        let temp = String(num%1000);
+        while(temp.length<3){
+            temp = "0" + temp;
+        }
+        temp = "."+temp;
+        s = temp + s;
+        num/=1000
+    }
+    s = s.slice(1,s.length);
+    s = "Rp" + s;
+    s = s + ",00";
+    return s;
+}
+
+function trainerProfileGenerator(trainer) {
     const trainerPicture = document.getElementById("trainer-picture");
     const trainerPicturePreview = document.getElementById("trainer-picture-preview");
     const trainerUsername = document.getElementById("trainer-username");
@@ -23,15 +40,15 @@ function trainerProfileGenerator(trainer){
     const trainerBalance = document.getElementById("trainer-balance");
     const trainerPokemonTotal = document.getElementById("trainer-pokemon-total");
 
-    trainerPicture.setAttribute("src",trainer.imgProfile);
-    trainerPicturePreview.setAttribute("src",trainer.imgProfile);
+    trainerPicture.setAttribute("src", trainer.imgProfile);
+    trainerPicturePreview.setAttribute("src", trainer.imgProfile);
 
     trainerUsername.innerText = trainer.username;
     trainerName.innerText = trainer.trainerName;
     trainerRank.innerText = trainer.rank;
     trainerEmail.innerText = trainer.email;
-    trainerBalance.innerText = trainer.balance;
-    trainerPokemonTotal.innerText = trainer.pokemonList.length+" Pokemon";
+    trainerBalance.innerText = currency(trainer.balance);
+    trainerPokemonTotal.innerText = trainer.pokemonList.length + " Pokemon";
 }
 
 trainerProfileGenerator(defaultTrainer)
@@ -200,21 +217,27 @@ changeMyPokemon(0, defaultTrainer);
 
 function insertPokemonToMyPokemon(index, trainer) {
     let res = []
+    let temp;
     const pokemon = trainer.pokemonList[index];
     if (statsButton.classList.contains("stats-off")) {
         res = makePokemonDesc(pokemon);
+        temp = res[res.length-1];
+        res = res.slice(0,res.length-1);
     } else {
         res = makePokemonStats(pokemon);
     }
     for (i of res) {
         myPokemon.append(i)
     }
-    pokemonNav.append(makePokemonNav(index, trainer));
+    if(temp!=undefined){
+        myPokemonBottom.append(temp);
+    }
+    myPokemonBottom.append(makePokemonNav(index, trainer));
 }
 
 function changeMyPokemon(index, trainer) {
     myPokemon.innerHTML = "";
-    pokemonNav.innerHTML = "";
+    myPokemonBottom.innerHTML = "";
     insertPokemonToMyPokemon(index, trainer);
 }
 
