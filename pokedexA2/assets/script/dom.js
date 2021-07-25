@@ -279,3 +279,14 @@ statsButton.addEventListener("click", function () {
     }
     changeMyPokemon(index, defaultTrainer)
 })
+
+function itemStock(trainer){
+    const itemsAmount = document.getElementsByClassName("items-amount");
+    itemsAmount[0].innerText = trainer.bag.pokeballs.pokeball.amount;
+    itemsAmount[1].innerText = trainer.bag.pokeballs.greatball.amount;
+    itemsAmount[2].innerText = trainer.bag.pokeballs.ultraball.amount;
+    itemsAmount[3].innerText = trainer.bag.pokeballs.masterball.amount;
+
+}
+
+itemStock(defaultTrainer);

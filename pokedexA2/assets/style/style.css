@@ -258,11 +258,11 @@ main {
     flex-basis: 65%;
 }
 
-span {
+/* span {
     position: absolute;
     color: red;
     margin-top: 60px;
-}
+} */
 
 #stats-button {
     flex-basis: 30%;
@@ -626,4 +626,78 @@ a {
 .event-date {
     text-align: right;
     font-size: 10px;
+}
+
+#items-stock {
+    justify-content: space-between;
+}
+/* .content {
+    outline: 1px solid red;
+}
+#items-stock * {
+    outline: 1px solid red;
+} */
+
+#items-stock > div {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.item-stock {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-stock img {
+    width: 50px;
+    height: auto;
+}
+
+.item-add {
+    cursor: pointer;
+    background: url('../img/icons/plus-square.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.item-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.item-content > div {
+    padding: 5px;
+}
+
+.item-content > div > p {
+    font-size: 12px;
+    text-align: left;
+}
+
+.more-item{
+    cursor: pointer;
+    font-weight: 400;
+    padding: 10px;
+    font-size: 12px;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #4195D5;
+    color: #4195D5;
+}
+
+.more-item-icon {
+    margin-right: 10px;
+    background: url('../img/icons/more-items.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
 }
