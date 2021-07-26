@@ -103,7 +103,7 @@ function generateItem() {
             hyperpotion: {
                 item: new Item("Hyper Potion",
                     "assets/img/items/hyperpotion.png",
-                    20000,
+                    22500,
                     "Heals Pokemon For 200 HP"),
                 amount: 0
             },
@@ -119,14 +119,14 @@ function generateItem() {
             revive: {
                 item: new Item("Revive",
                     "assets/img/items/revive.png",
-                    20000,
+                    30000,
                     "Revives Pokemon with Half HP"),
                 amount: 0
             },
             maxrevive: {
                 item: new Item("Max Revive",
                     "assets/img/items/maxrevive.png",
-                    40000,
+                    70000,
                     "Revives Pokemon with Full HP"),
                 amount: 0
             }
@@ -156,3 +156,12 @@ const defaultTrainer = new Trainer("Rezapu",
     defaultPokemon(),
     defaultItems()
 );
+
+function findItemByName(name,trainer){
+    const bag = trainer.bag;
+    for(type of Object.entries(bag)){
+        for(item of Object.entries(type[1])){
+            if(item[1].item.name==name) return item[1];
+        }
+    }
+}

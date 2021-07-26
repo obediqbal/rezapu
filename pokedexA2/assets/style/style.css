@@ -36,6 +36,10 @@ nav>div {
     margin-bottom: 10px;
 }
 
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .nav-button {
     font-size: smaller;
     cursor: pointer;
@@ -258,11 +262,11 @@ main {
     flex-basis: 65%;
 }
 
-/* span {
+.heading span {
     position: absolute;
     color: red;
     margin-top: 60px;
-} */
+}
 
 #stats-button {
     flex-basis: 30%;
@@ -411,13 +415,13 @@ main {
     background-color: #5494c8;
 }
 
-figure {
+.content figure {
     width: 100%;
     height: auto;
     padding: 20px;
 }
 
-figure>img {
+.content figure>img {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -464,7 +468,7 @@ p {
 
 #my-pokemon-bottom {
     height: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -631,6 +635,7 @@ a {
 #items-stock {
     justify-content: space-between;
 }
+
 /* .content {
     outline: 1px solid red;
 }
@@ -638,7 +643,7 @@ a {
     outline: 1px solid red;
 } */
 
-#items-stock > div {
+#items-stock>div {
     display: flex;
     width: 100%;
     height: auto;
@@ -660,7 +665,15 @@ a {
 
 .item-add {
     cursor: pointer;
-    background: url('../img/icons/plus-square.svg');
+    background: url('../img/icons/add.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.item-add-unavailable {
+    background: url('../img/icons/add-unavailable.svg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 30px;
@@ -673,16 +686,16 @@ a {
     flex-direction: row;
 }
 
-.item-content > div {
+.item-content>div {
     padding: 5px;
 }
 
-.item-content > div > p {
+.item-content>div>p {
     font-size: 12px;
     text-align: left;
 }
 
-.more-item{
+#more-item {
     cursor: pointer;
     font-weight: 400;
     padding: 10px;
@@ -700,4 +713,114 @@ a {
     background-size: cover;
     width: 20px;
     height: 20px;
+}
+
+.store-outer-container {
+    margin-bottom: 30px;
+    cursor: pointer;
+    padding: 5px 10px!important;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.store-outer-container p {
+    text-align: left;
+    font-size: 12px;
+}
+
+.store-outer-container figure {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.store-outer-container img {
+    flex: 1;
+    width: 100px;
+}
+
+.store-left {
+    display: flex;
+    align-items: center;
+}
+
+.store-right {
+    padding: 10px;
+}
+
+.store-item-name {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.store-item-price {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#modal-buy {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    box-shadow: 0 0 30px 3px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    padding: 30px;
+    width: 40%;
+}
+
+.modal-content * {
+    margin: 5px;
+}
+
+#modal-name {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#modal-owned-container {
+    font-size: 12px;
+}
+
+.modal-item-buy {
+    cursor: pointer;
+    border-radius: 100px;
+    text-align: center;
+    color: white;
+    background-color: #4195D5;
+    font-weight: 700;
+
+}
+
+.clear {
+    clear: both;
+}
+
+footer {
+    background-color: #4195D5;
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+footer p {
+    margin-right: 30px;
+    text-align: right;
 }

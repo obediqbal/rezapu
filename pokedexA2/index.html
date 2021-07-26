@@ -66,8 +66,9 @@
                     </div>
                 </div>
             </div>
+            <hr>
         </aside>
-        <div>
+        <div id="content">
             <article id="dashboard" class="flex">
                 <div class="outer-container">
                     <div class="inner-container">
@@ -198,13 +199,13 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="item-add"></div>
+                                            <div class="item-add-unavailable"></div>
                                         </div>
                                     </div>
                                 </div>
                                 
 
-                                <div class="more-item">
+                                <div id="more-item">
                                     <div class="more-item-icon"></div>
                                     <p>Find more items</p>
                                 </div>
@@ -271,11 +272,31 @@
                     </div>
                 </div>
             </article>
-            <article id="store">
-    
+            <article id="store" class="flex hide">
+                <div id="modal-buy" class="hide">
+                    <div class="modal-content">
+                        <div>
+                            <img id="modal-img" src="assets/img/items/pokeball.png">
+                            <div>
+                                <p><span id="modal-name">Poke ball</span></p>
+                                <p id="modal-owned-container">Owned : <span id="modal-owned">10</span></p>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="number">
+                            <div id="modal-submit" class="modal-item-buy">Buy</div>
+                            
+                        </div>
+                    </div>
+                </div>
             </article>
         </div>
     </main>
+    <div class="clear"></div>
+    <footer>
+        <p>PokeMonitor &copy; 2021, Rezapu Obed</p>
+    </footer>
+
     <script src="assets//script/data.js"></script>
     <script src="assets/script/calendar.js"></script>
     <script src="assets/script/dom.js"></script>

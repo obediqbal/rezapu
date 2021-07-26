@@ -15,16 +15,24 @@ const statsIcon = statsButton.getElementsByClassName("stats-icon")[0];
 
 function currency(num) {
     let s = "";
-    while (parseInt(num)>0) {
-        let temp = String(num%1000);
-        while(temp.length<3){
+
+    n = parseInt(String(num).length/3);
+    if(String(num).length%3) n++;
+
+    do{
+
+        let temp = String(num % 1000);
+        num /= 1000
+        num = parseInt(num)
+        while (temp.length < 3 && parseInt(num)>0) {
             temp = "0" + temp;
         }
-        temp = "."+temp;
+        temp = "." + temp;
         s = temp + s;
-        num/=1000
+        n--;
     }
-    s = s.slice(1,s.length);
+    while(n>0)
+    s = s.slice(1, s.length);
     s = "Rp" + s;
     s = s + ",00";
     return s;
@@ -221,15 +229,15 @@ function insertPokemonToMyPokemon(index, trainer) {
     const pokemon = trainer.pokemonList[index];
     if (statsButton.classList.contains("stats-off")) {
         res = makePokemonDesc(pokemon);
-        temp = res[res.length-1];
-        res = res.slice(0,res.length-1);
+        temp = res[res.length - 1];
+        res = res.slice(0, res.length - 1);
     } else {
         res = makePokemonStats(pokemon);
     }
     for (i of res) {
         myPokemon.append(i)
     }
-    if(temp!=undefined){
+    if (temp != undefined) {
         myPokemonBottom.append(temp);
     }
     myPokemonBottom.append(makePokemonNav(index, trainer));
@@ -280,13 +288,113 @@ statsButton.addEventListener("click", function () {
     changeMyPokemon(index, defaultTrainer)
 })
 
-function itemStock(trainer){
+function itemStock(trainer) {
     const itemsAmount = document.getElementsByClassName("items-amount");
     itemsAmount[0].innerText = trainer.bag.pokeballs.pokeball.amount;
     itemsAmount[1].innerText = trainer.bag.pokeballs.greatball.amount;
     itemsAmount[2].innerText = trainer.bag.pokeballs.ultraball.amount;
     itemsAmount[3].innerText = trainer.bag.pokeballs.masterball.amount;
-
 }
 
 itemStock(defaultTrainer);
+
+function makeStoreItem(trainer, item) {
+    const container = document.createElement("div");
+    container.classList.add("store-outer-container", "card", "margin");
+
+    const left = document.createElement("div");
+    left.classList.add("store-left");
+
+    const figure = document.createElement("figure");
+    const img = document.createElement("img");
+    img.setAttribute("src", item.item.imgsrc);
+    figure.append(img);
+
+    const div = document.createElement("div");
+
+    const itemNameP = document.createElement("p");
+    const itemNameS = document.createElement("span");
+    itemNameS.classList.add("store-item-name");
+    itemNameS.innerText = item.item.name;
+    itemNameP.append(itemNameS);
+
+    const itemDescP = document.createElement("p");
+    const itemDescS = document.createElement("span");
+    itemDescS.classList.add("store-item-desc");
+    itemDescS.innerText = item.item.desc;
+    itemDescP.append(itemDescS);
+
+    const itemOwnedP = document.createElement("p");
+    const itemOwnedS = document.createElement("span");
+    itemOwnedS.classList.add("store-item-owned");
+    itemOwnedS.innerText = findItemByName(item.item.name,trainer).amount;
+    itemOwnedP.append("Owned : ",itemOwnedS);
+
+    div.append(itemNameP, itemDescP, itemOwnedP);
+
+    left.append(figure,div);
+
+    const right = document.createElement("div");
+    right.classList.add("store-right");
+
+    const itemPriceP = document.createElement("p");
+    const itemPriceS = document.createElement("span");
+    itemPriceS.classList.add("store-item-price");
+    itemPriceS.innerText = currency(item.item.price);
+    itemPriceP.append(itemPriceS)
+
+    right.append(itemPriceP);
+
+    container.append(left,right);
+    return container;
+}
+
+const modalBuy = document.getElementById("modal-buy");
+
+function makeModalDetails(item,trainer){
+    const modalImg = document.getElementById("modal-img");
+    const modalName =document.getElementById("modal-name");
+    const modalOwned = document.getElementById("modal-owned");
+
+    modalImg.setAttribute("src",item.item.imgsrc);
+    modalName.innerText = item.item.name
+    modalOwned.innerText = findItemByName(item.item.name,trainer).amount;
+}
+
+for(type of Object.entries(generateItem())){
+    for(item of Object.entries(type[1])){
+        if(item[1].item.price==0) continue;
+        const itemStore = makeStoreItem(defaultTrainer,item[1])
+        const temp = item[1]
+        itemStore.addEventListener("click",function(){
+            makeModalDetails(temp,defaultTrainer);
+            modalBuy.classList.remove("hide");
+        });
+        store.append(itemStore);
+    }
+}
+
+const modalSubmit = document.getElementById("modal-submit");
+modalSubmit.addEventListener("click",function(){
+    location.reload();
+});
+
+window.addEventListener("click",function(event){
+    if(event.target==modalBuy){
+        modalBuy.classList.add("hide");
+    }
+});
+
+const moreItem = document.getElementById("more-item");
+moreItem.addEventListener("click",function(){
+    resetNavButton();
+    switchOnNavButton(1);
+});
+
+const itemAdd = document.getElementsByClassName("item-add");
+for(button of itemAdd){
+    button.addEventListener("click",function(){
+        resetNavButton();
+        switchOnNavButton(1);
+    });
+}
