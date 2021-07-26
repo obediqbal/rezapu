@@ -4,10 +4,11 @@
 <head>
     <title>My Pokedex</title>
     <link rel="stylesheet" href="assets/style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <header>
+    <header class="">
         <h1>PokeMonitor</h1>
         <nav>
             <div class="nav-button nav-button-on">
@@ -69,8 +70,7 @@
             <hr>
         </aside>
         <div id="content">
-            <article id="dashboard" class="flex">
-                <div class="outer-container">
+            <article id="dashboard" class="flex outer-container">
                     <div class="inner-container">
                         <div class="card margin">
                             <div class="heading">
@@ -212,9 +212,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="outer-container">
-                    <div class="inner-container">
+                    <div class="inner-container region">
                         <div class="card margin">
                             <div class="heading">
                                 <div class="icon-container">
@@ -230,7 +228,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="inner-container double">
+                    <div class="inner-container">
                         <div class="card margin">
                             <div class="heading">
                                 <div class="icon-container">
@@ -270,7 +268,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
+                <!-- <div class="outer-container"> -->
+                <!-- </div> -->
             </article>
             <article id="store" class="flex hide">
                 <div id="modal-buy" class="hide">
@@ -283,7 +283,7 @@
                             </div>
                         </div>
                         <div>
-                            <input type="number">
+                            <input type="number" min=0>
                             <div id="modal-submit" class="modal-item-buy">Buy</div>
                             
                         </div>

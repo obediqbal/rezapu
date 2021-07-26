@@ -398,3 +398,7 @@ for(button of itemAdd){
         switchOnNavButton(1);
     });
 }
+
+window.addEventListener("resize",function(){
+    
+});

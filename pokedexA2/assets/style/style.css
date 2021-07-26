@@ -193,7 +193,6 @@ aside>div {
 main {
     width: 85%;
     height: 100%;
-    height: auto;
     padding: 30px;
     padding-right: 0;
     float: right;
@@ -436,6 +435,7 @@ p {
 .flex {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .outer-container {
@@ -450,16 +450,19 @@ p {
     margin-bottom: 0;
 }
 
-.inner-container {
-    flex-grow: 1;
-    flex-basis: 100%;
-    flex-shrink: 1;
+#dashboard {
+    height: auto;
+    flex-wrap: wrap;
 }
 
-.double {
-    flex-grow: 2;
-    flex-shrink: 2;
-    flex-basis: 100%;
+#dashboard .inner-container {
+    flex: 1;
+    flex-basis: 33.3333%;
+    margin-bottom: 30px;
+}
+
+.region {
+    flex-basis: 66.6666% !important;
 }
 
 .margin {
@@ -512,7 +515,6 @@ p {
 }
 
 #calendar {
-    /* border-spacing: 5px; */
     font-size: 10px;
 }
 
@@ -718,7 +720,7 @@ a {
 .store-outer-container {
     margin-bottom: 30px;
     cursor: pointer;
-    padding: 5px 10px!important;
+    padding: 5px 10px !important;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -777,7 +779,7 @@ a {
     position: inherit;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background-color: white;
     box-shadow: 0 0 30px 3px rgba(0, 0, 0, 0.3);
     margin: auto;
@@ -824,3 +826,5 @@ footer p {
     margin-right: 30px;
     text-align: right;
 }
+
+@media screen and (max-width:1270px) {}
