@@ -920,6 +920,9 @@ footer p {
     main {
         padding: 0;
     }
+    .margin {
+        margin-right: 0;
+    }
     .card {
         padding: 15px;
         width: 100%!important;
