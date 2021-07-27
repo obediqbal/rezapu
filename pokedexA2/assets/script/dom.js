@@ -169,9 +169,6 @@ function makePokemonStats(pokemon) {
 
     statsHead.append(statsImg, statsName);
 
-    // const statsData = document.createElement("div");
-    // statsData.classList.add("stats-data");
-
     let listData = [];
     listData.push(["HP", "ATK", "DEF", "Sp.ATK", "Sp.DEF", "SPD"]);
     listData.push(pokemon.stats);
