@@ -379,10 +379,24 @@ modalSubmit.addEventListener("click",function(){
     location.reload();
 });
 
+const navMenuContainer = document.getElementsByClassName("nav-menu-container")[0];
+const navMenuButton = document.getElementById("nav-menu-button");
+const header = document.getElementsByTagName("header")[0];
+
+navMenuButton.addEventListener("click",function(){
+    header.style.setProperty("display","block");
+});
+
 window.addEventListener("click",function(event){
     if(event.target==modalBuy){
         modalBuy.classList.add("hide");
     }
+    else if(event.target!=navMenuButton && event.target.parentElement!=header && event.target!=header){
+        if(window.getComputedStyle(navMenuContainer).display!="none"){
+            header.style.setProperty("display","none");
+        }
+    }
+
 });
 
 const moreItem = document.getElementById("more-item");
@@ -398,7 +412,3 @@ for(button of itemAdd){
         switchOnNavButton(1);
     });
 }
-
-window.addEventListener("resize",function(){
-    
-});

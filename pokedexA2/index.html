@@ -8,7 +8,10 @@
 </head>
 
 <body>
-    <header class="">
+    <figure class="nav-menu-container">
+        <div id="nav-menu-button"></div>
+    </figure>
+    <header>
         <h1>PokeMonitor</h1>
         <nav>
             <div class="nav-button nav-button-on">
@@ -67,7 +70,6 @@
                     </div>
                 </div>
             </div>
-            <hr>
         </aside>
         <div id="content">
             <article id="dashboard" class="flex outer-container">
@@ -212,22 +214,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="inner-container region">
-                        <div class="card margin">
-                            <div class="heading">
-                                <div class="icon-container">
-                                    <div class="region-icon icon"></div>
-                                </div>
-                                <h4>Region</h4>
-                                <span></span>
-                            </div>
-                            <div class="content" align="center">
-                                <div class="map-container">
-                                    <div class="map"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="inner-container">
                         <div class="card margin">
                             <div class="heading">
@@ -268,6 +254,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="inner-container region">
+                        <div class="card margin">
+                            <div class="heading">
+                                <div class="icon-container">
+                                    <div class="region-icon icon"></div>
+                                </div>
+                                <h4>Region</h4>
+                                <span></span>
+                            </div>
+                            <div class="content" align="center">
+                                <div class="map-container">
+                                    <div class="map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 
                 <!-- <div class="outer-container"> -->
                 <!-- </div> -->
@@ -282,7 +285,7 @@
                                 <p id="modal-owned-container">Owned : <span id="modal-owned">10</span></p>
                             </div>
                         </div>
-                        <div>
+                        <div class="modal-input">
                             <input type="number" min=0>
                             <div id="modal-submit" class="modal-item-buy">Buy</div>
                             
