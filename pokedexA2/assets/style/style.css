@@ -926,6 +926,15 @@ footer p {
     .stats-table {
         border-spacing: 5px;
     }
+    .trainer-profile-img {
+        width: 70px;
+    }
+    #trainer-profile-details{
+        padding: 5px;
+    }
+    #trainer-profile-details p {
+        font-size: 12px!important;
+    }
 }
 @media screen and (max-width:340px) {
     .nav-menu-container {
