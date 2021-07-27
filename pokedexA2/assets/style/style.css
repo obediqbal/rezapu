@@ -934,6 +934,7 @@ footer p {
         border-spacing: 5px;
     }
     .content {
+        outline: 1px solid red;
         justify-content: flex-end;
     }
 }
