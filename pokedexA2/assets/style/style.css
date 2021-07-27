@@ -476,7 +476,7 @@ p {
 }
 
 #my-pokemon-bottom {
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -643,13 +643,6 @@ a {
 #items-stock {
     justify-content: space-between;
 }
-
-/* .content {
-    outline: 1px solid red;
-}
-#items-stock * {
-    outline: 1px solid red;
-} */
 
 #items-stock>div {
     display: flex;
@@ -934,7 +927,6 @@ footer p {
         border-spacing: 5px;
     }
     .content {
-        outline: 1px solid red;
         justify-content: flex-end;
         height: 100%;
     }
