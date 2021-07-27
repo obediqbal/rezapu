@@ -246,20 +246,6 @@ function changeMyPokemon(index, trainer) {
     insertPokemonToMyPokemon(index, trainer);
 }
 
-const headings = document.getElementsByClassName("heading");
-for (heading of headings) {
-    let temp = heading
-    const span = heading.getElementsByTagName("span")[0];
-    document.addEventListener("scroll", function () {
-        span.innerText = getSize(temp);
-    })
-}
-
-function getSize(heading) {
-    const parent = heading.parentElement;
-    return window.getComputedStyle(parent).getPropertyValue("width");
-}
-
 function toggleStatsButton() {
     if (statsButton.classList.contains("stats-off")) {
         statsButton.classList.replace("stats-off", "stats-on");
