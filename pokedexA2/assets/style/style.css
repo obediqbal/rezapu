@@ -936,6 +936,7 @@ footer p {
     .content {
         outline: 1px solid red;
         justify-content: flex-end;
+        height: 100%;
     }
 }
 @media screen and (max-width:340px) {
