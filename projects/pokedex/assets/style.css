@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins',sans-serif;
+    font-size: 12px;
+}
+
+.flex {
+    display: flex;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.grow2 {
+    flex-grow: 2;
+}
+.basis0 {
+    flex-basis: 0;
+}
+.basis {
+    flex-basis: 33.33333%;
+}
+
+.basis2 {
+    flex-basis: 66.66666%;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.top {
+    height: 100px;
+    padding-right: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    border: 5px solid rgba(255, 255, 255, 0.4);
+}
+
+.pokemon-details {
+    padding-right: 20px;
+}
+
+.pokemon-potrait {
+    margin: 10px auto;
+    width: 45%;
+}
+
+#pokemon-data {
+    margin: 5px auto;
+    text-align: center;
+}
+#pokemon-data p {
+    padding: 10px 15px;
+    color: #4C6E84;
+}
+.elements {
+    padding: 5px;
+}
+.elements div {
+    padding: 0.7em;
+    font-size: 1.2em;
+    border-radius: 20px;
+    color: white;
+    margin-right: 5px;
+}
+.elements div:first-child {
+    margin-left:auto;
+}
+.elements div:last-child {
+    margin-right: auto;
+}
+.grass {
+    background-color: green;
+}
+.poison {
+    background-color : purple;
+}
+.fire {
+    background-color: red;
+}
+#calendar>div{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+#calendar>div>p {
+    flex-basis: 14.285714%;
+    text-align: center;
+    padding: 0.5em;
+    font-size: 1.2em;
+    margin: 0.3em;
+    margin-bottom: 0.8em;
+}
+.today {
+    background-color: rgb(13, 236, 218)!important;
+    border-radius: 10px;
+}
+#calendar .bg {
+    background-color: rgba(238, 253, 255, 0.7);
+}
+#calendar .head {
+    font-weight: 800;
+}
+.grey {
+    color:rgb(146, 146, 146);
+}
+section>div{
+    height: auto;
+}
+section>div>div {
+    height:100%;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+h3 {
+    color:rgb(57, 58, 58)
+}
+p {
+    color:rgb(54, 61, 65)
+}
+article {
+    margin: 0 0 0 auto;
+    padding: 30px;
+    width: 85%;
+    background-color: #F2F8FF;
+    height: 100%;
+}
